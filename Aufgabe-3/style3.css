@@ -1,16 +1,38 @@
 
 body{
+    background-image: url("Fotos/bg.png");
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
 h1{
-    color: white;
+    color: #f7f7f7;
+    text-align: left;
     font-size: 150px;
     letter-spacing: -17px;
-    position: relative;
-    bottom: 410px;
+    width: 600px;
+    margin-left: 450px ;
+    margin-top: -900px ;
+
+
 }
 
+h2{
+    color: #f7f7f7;
+    text-align: left;
+    font-size: 80px;
+    letter-spacing: -10px;
+    width: 900px;
+    margin-left: 460px;
+    margin-top: -100px;
+}
+
+.subtext{
+    color: #f7f7f7;
+    width: 600px;
+    font-size: 25px;
+    margin-left: 460px;
+    text-align:left;
+}
 
 .navi{
     display: inline-block;
@@ -19,28 +41,28 @@ h1{
     position: fixed;
     right: 0;
     top: 0;
-    width: 75%;
-    border-radius: 10px 10px 10px 10px;
-    z-index: 9999;
+    width: 50%;
+    border-radius: 0px 0px 10px 10px;
 }
+
 .navi1{
-    border-right: solid 1px white;
+    border-right: solid 1px #f7f7f7;
 }
 
 .navi2{
-    border-right: solid 1px white;
+    border-right: solid 1px #f7f7f7;
 }
 
 .navi3{
-    border-right: solid 1px white;
+    border-right: solid 1px #f7f7f7;
 }
 
 a:link, a:visited {
         text-decoration: none;
-        color: white;
+        color: #f7f7f7;
 }
  a:hover {
-    color: lightgray;
+    opacity: 0.7;
  }
 
  a.active{
@@ -54,11 +76,6 @@ div a.activepage1{
      font-weight: bolder;
 }
 
-div a.activePage2{
-    color: #b8a07e;
-    font-weight: bolder;
-}
-
 .social{
     position: absolute;
     top: 270px;
@@ -70,102 +87,13 @@ div a.activePage2{
     opacity: 0.5;
 }
 
-.hadline {
-    color: white;
-    letter-spacing: -4px;
-    margin: auto;
-    width: 15%;
-    border: 3px;
-    padding: 10px;
-    font-size: 23px;
-    text-align: left;
-    position: relative;
-    bottom: 570px;
-    left: 100px;
-    text-align:left;
-}
-
-.text{
-    color: white;
-    margin: auto;
-    width: 15%;
-    border: 3px;
-    padding: 10px;
-    font-size: 10px;
-    text-align: left;
-    position: relative;
-    bottom: 625px;
-    left: 100px;
-    text-align:left;
-}
-
-.überschrift1{
-    color: #ffc71e;
-    font-size: 20px;
-    position: relative;
-    bottom: -20px;
-    right: 360px;
-    
-}
-
-.überschrift2{
-    color: #ffc71e;
-    font-size: 20px;
-    position: relative;
-    bottom: -20px;
-    margin-left: -732px;
-    
-}
-
-.überschrift3{
-    color: #ffc71e;
-    font-size: 20px;
-    position: relative;
-    bottom: -20px;
-    margin-left: -740px;
-    margin-right: -22px;
-    
-}
-
-.überschrift4{
-    color: #ffc71e;
-    font-size: 20px;
-    position: relative;
-    bottom: -20px;
-    margin-left: -678px;
-    margin-right: -50px;
-    
-}
-
-.überschrift5{
-    color: #ffc71e;
-    font-size: 20px;
-    position: relative;
-    bottom: -20px;
-    margin-left: -718px;
-    margin-right: -60px;
-    
-}
-
-
-.foto{
-    color: #ffc71e;
-    font-size: 20px;
-    position: relative;
-    bottom: 480px;
-    right: 306px;
-}
-
-.foto1 {
-    position: relative;
-    bottom: 470px;
-}
 
 .circle{
     position: static;
     display: block;
-    margin: -35px auto;
-    width: 1000px;
+    width: 1500px;
+    height: 700px;
+    margin-bottom: 200px;
 }
 
 .kontakt{
@@ -183,36 +111,23 @@ div a.activePage2{
 .Kontakt{
     color: #000000;
     font-weight: bolder;
-    position: relative;
+    position: relative;;
     margin-left: 10px;
     margin-top: -500px;
 }
 
-.formular{
+.contactform{
     background: lightgrey;
     font-size: 9pt;
-    color: white;
-    width: 200px;
-    padding: 5px 5px 5px 5px;
-    margin-left: 200px;
-    text-align: left;
+   
 }
 
-.formular2{
-    background: lightgrey;
-    font-size: 9pt;
-    color: white;
-    width: 200px;
-    padding: 5px 5px 5px 5px;
-    margin-left: 200px;
-    text-align: left;
-}
 
 .Datenschutz{
     font-size: 9pt;
     color: lightgray;
-    position: relative;
-    left: -263px;
+    width: 600px;
+    margin-left: 200px;
 }
 
 .absenden{
@@ -222,10 +137,6 @@ div a.activePage2{
     width: 55px;
     padding: 5px 5px 5px 5px;
     margin-left: 200px;
-}
-
-.fotoich{
-    margin-top: -500px;
 }
 
 #footer {
@@ -241,31 +152,15 @@ div a.activePage2{
   #footer .socials-media ul {
     display: inline-block;
     float: none;
+    list-style: none;
     margin: 0 0 20px 0;
   }
   
   #footer .socials-media ul li {
+    list-style: none;
     float: left;
     margin-left: 10px;
     margin-right: 10px;
-  }
-  
-  #footer .socials-media ul li a {
-    float: center;
-    font-size: 24px;
-    color: #999;
-    letter-spacing: 0.1em;
-    font-weight: 500;
-    background: transparent;
-  }
-  
-  #footer .socials-media ul li a:hover {
-    color: #b8a07e;
-    -moz-transition: all 0.5s ease-in-out 0s;
-    -ms-transition: all 0.5s ease-in-out 0s;
-    -o-transition: all 0.5s ease-in-out 0s;
-    -webkit-transition: all 0.5s ease-in-out 0s;
-    transition: all 0.5s ease-in-out 0s;
   }
   
   #footer p {

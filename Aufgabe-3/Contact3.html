@@ -24,38 +24,56 @@
     <br>
     
     <h1>contact</h1>
-    <div class="headline">
-    <h2>annette wiedenmann</h2>
-    </div>
     
-    <div class="text">
+    <h2>annette wiedenmann</h2>
+    
+    
+    <div class="subtext">
     <p>Sende mir gerne Fragen und Anregungen oder stalke mich auf meinen social media Kanälen.</p>
     </div>
     
-    <p>Kontaktiere mich über Social Media</p>
+    <p class="Kontakt">Kontaktiere mich über Social Media</p>
+   
+    <div class="socialsmediacon">
+        <ul class="smlistcon">
 
-    <div class="social">
-    <p><a href="https://www.instagram.com/annette.wdm"><img src="Fotos/IGicon.png" height="50"> </a> </p>
-    <br>
-    <p><a href="https://www.pinterest.de/A_wie_ananas/?eq=nettan&etslf=8362"> <img src="Fotos/pinicon.png" height="50"> </a></p>
-    <br>
-    <p><a href="https://de-de.facebook.com/frettchen.wiedenmann"> <img src="Fotos/fbicon.png" height="50"> </a></p>
-    <br>
+            <li><a href="https://www.instagram.com/annette.wdm"><i class="ion-social-instagram"><img src="Fotos/IGicon.png" height="40"></i></a></li>
+            <li><a href="https://de-de.facebook.com/frettchen.wiedenmann"><i class="ion-social-facebook"><img src="Fotos/fbicon.png" height="40"></i></a></li>
+            <li><a href="https://www.pinterest.de/A_wie_ananas/?eq=nettan&etslf=8362"><i class="ion-social-pinterest"><img src="Fotos/pinicon.png" height="40"></i></a></li>
+        
+          
+         </ul>
     </div>
 
-    <p>Oder per Mail</p>
-    <a href="mailto:annette.wiedenmann@hs-furtwangen.de"> <img src="Fotos/mail.png" height="50"></a></a></p>
+    <div class="socials-media">
+        <p class="Kontakt">Oder per Mail</p>
+        <ul class="list-unstyled">
+            <li><li><a href="mailto:annette.wiedenmann@hs-furtwangen.de"><i class="ion-social-mail"><img src="Fotos/mail.png" height="40"></i></a></li></li>
+        </ul>
+    </div>
+
     <br>
     <br>
     <p class="Kontakt">Oder über dieses wunderschöne Kontaktformular</p>
 
-    <div class="formular">Vorname</div><br>
-    <div class="formular">Nachname</div><br>
-    <div class="formular">E-Mail</div><br>
-    <div class="formular2">Nachricht</div><br>
+    <div id=“contactform“>
+        <form action=“kontakt.php“ method=“post“>
+        Name: <input name=“name“ size=“40″><br />
+        E-Mail: <input name=“email“ size=“40″><br />
+        Betreff: <select name=“betreff“ size=“1″>
+        <option>Hilfe</option>
+        <option>Kritik</option>
+        <option>Linktausch</option>
+        <option>Werbung</option>
+        <option>Sonstiges</option>
+        </select><br />
+        Nachricht: <br />
+        <textarea name=“text“ cols=“50″ rows=“10″></textarea><br />
+        <input name=“submit“ type=“submit“ value=“absenden“>
+        </form>
+        </div>
     <div class="Datenschutz">Mit Absenden der Nachricht bestätige ich den nicht vorhandenen Datenschutz und dass meine Seele verkauft werden darf.</div><br>
     
-    <div class="absenden">absenden</div>
 
 </body>
 </html>
