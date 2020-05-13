@@ -1,0 +1,281 @@
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+h1{
+    color: white;
+    font-size: 150px;
+    letter-spacing: -17px;
+    position: relative;
+    bottom: 410px;
+}
+
+
+.navi{
+    display: inline-block;
+    background-color: #000000;
+    padding: 5px 8px 5px 5px;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 75%;
+    border-radius: 10px 10px 10px 10px;
+    z-index: 9999;
+}
+.navi1{
+    border-right: solid 1px white;
+}
+
+.navi2{
+    border-right: solid 1px white;
+}
+
+.navi3{
+    border-right: solid 1px white;
+}
+
+a:link, a:visited {
+        text-decoration: none;
+        color: white;
+}
+ a:hover {
+    color: lightgray;
+ }
+
+ a.active{
+     color: lightgray;
+     text-decoration: underline;
+ }
+
+
+div a.activepage1{
+     color: #b8a07e;
+     font-weight: bolder;
+}
+
+div a.activePage2{
+    color: #b8a07e;
+    font-weight: bolder;
+}
+
+.social{
+    position: absolute;
+    top: 270px;
+    margin-left: 49.6%;
+    z-index: 9999;
+}
+
+.social:hover{
+    opacity: 0.5;
+}
+
+.hadline {
+    color: white;
+    letter-spacing: -4px;
+    margin: auto;
+    width: 15%;
+    border: 3px;
+    padding: 10px;
+    font-size: 23px;
+    text-align: left;
+    position: relative;
+    bottom: 570px;
+    left: 100px;
+    text-align:left;
+}
+
+.text{
+    color: white;
+    margin: auto;
+    width: 15%;
+    border: 3px;
+    padding: 10px;
+    font-size: 10px;
+    text-align: left;
+    position: relative;
+    bottom: 625px;
+    left: 100px;
+    text-align:left;
+}
+
+.überschrift1{
+    color: #ffc71e;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+    right: 360px;
+    
+}
+
+.überschrift2{
+    color: #ffc71e;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+    margin-left: -732px;
+    
+}
+
+.überschrift3{
+    color: #ffc71e;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+    margin-left: -740px;
+    margin-right: -22px;
+    
+}
+
+.überschrift4{
+    color: #ffc71e;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+    margin-left: -678px;
+    margin-right: -50px;
+    
+}
+
+.überschrift5{
+    color: #ffc71e;
+    font-size: 20px;
+    position: relative;
+    bottom: -20px;
+    margin-left: -718px;
+    margin-right: -60px;
+    
+}
+
+
+.foto{
+    color: #ffc71e;
+    font-size: 20px;
+    position: relative;
+    bottom: 480px;
+    right: 306px;
+}
+
+.foto1 {
+    position: relative;
+    bottom: 470px;
+}
+
+.circle{
+    position: static;
+    display: block;
+    margin: -35px auto;
+    width: 1000px;
+}
+
+.kontakt{
+    color: #ffc71e;
+    font-size: 20px;
+    position: relative;
+    bottom: 550px;
+    right: 300px;
+}
+
+.activepage1{
+    border-right: solid 1px white;
+}
+
+.Kontakt{
+    color: #000000;
+    font-weight: bolder;
+    position: relative;
+    margin-left: 10px;
+    margin-top: -500px;
+}
+
+.formular{
+    background: lightgrey;
+    font-size: 9pt;
+    color: white;
+    width: 200px;
+    padding: 5px 5px 5px 5px;
+    margin-left: 200px;
+    text-align: left;
+}
+
+.formular2{
+    background: lightgrey;
+    font-size: 9pt;
+    color: white;
+    width: 200px;
+    padding: 5px 5px 5px 5px;
+    margin-left: 200px;
+    text-align: left;
+}
+
+.Datenschutz{
+    font-size: 9pt;
+    color: lightgray;
+    position: relative;
+    left: -263px;
+}
+
+.absenden{
+    font-size: 9pt;
+    color: white;
+    background: lightgray;
+    width: 55px;
+    padding: 5px 5px 5px 5px;
+    margin-left: 200px;
+}
+
+.fotoich{
+    margin-top: -500px;
+}
+
+#footer {
+    background: #f7f7f7;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  
+  #footer .socials-media {
+    width: 100%;
+  }
+  
+  #footer .socials-media ul {
+    display: inline-block;
+    float: none;
+    margin: 0 0 20px 0;
+  }
+  
+  #footer .socials-media ul li {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  #footer .socials-media ul li a {
+    float: center;
+    font-size: 24px;
+    color: #999;
+    letter-spacing: 0.1em;
+    font-weight: 500;
+    background: transparent;
+  }
+  
+  #footer .socials-media ul li a:hover {
+    color: #b8a07e;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+  }
+  
+  #footer p {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    margin-top: 0;
+    text-transform: capitalize;
+  }
+  
+  .credits {
+    font-size: 13px;
+  }
