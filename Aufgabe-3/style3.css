@@ -7,11 +7,12 @@ body{
 h1{
     color: #f7f7f7;
     text-align: left;
-    font-size: 150px;
-    letter-spacing: -17px;
+    font-size: 100px;
+    letter-spacing: -12px;
     width: 600px;
-    margin-left: 450px ;
+    margin-left: 500px ;
     margin-top: -900px ;
+    margin-bottom: 300px;
 
 
 }
@@ -19,18 +20,34 @@ h1{
 h2{
     color: #f7f7f7;
     text-align: left;
-    font-size: 80px;
-    letter-spacing: -10px;
+    font-size: 50px;
+    letter-spacing: -6px;
     width: 900px;
-    margin-left: 460px;
-    margin-top: -100px;
+    margin-left: 500px;
+    margin-top: -300px;
+    margin-bottom: 300px;
+}
+
+h3{ 
+    color: rgb(0, 0, 0);
+    font-size: 44px;
+    letter-spacing: -5px;
+    margin-bottom: 10px;
+
+}
+
+h4{
+    font-style: italic;
+    margin-top: -10px;
 }
 
 .subtext{
     color: #f7f7f7;
     width: 600px;
-    font-size: 25px;
-    margin-left: 460px;
+    font-size: 22px;
+    margin-left: 500px;
+    margin-top: -250px;
+    margin-bottom: 300px ;
     text-align:left;
 }
 
@@ -72,7 +89,7 @@ a:link, a:visited {
 
 
 div a.activepage1{
-     color: #b8a07e;
+     color: #c5ad70;
      font-weight: bolder;
 }
 
@@ -89,54 +106,86 @@ div a.activepage1{
 
 
 .circle{
+    
     position: static;
-    display: block;
-    width: 1500px;
-    height: 700px;
-    margin-bottom: 200px;
+
+    width: 1000px;
+    height: 500px;
+    margin-bottom: 400px;
 }
 
-.kontakt{
-    color: #ffc71e;
-    font-size: 20px;
-    position: relative;
-    bottom: 550px;
-    right: 300px;
-}
 
 .activepage1{
     border-right: solid 1px white;
+
+}
+
+.piclink1{
+    display: inline-block ;
+    background-color: #f7f7f7;
+    box-shadow: black;
+    width: 800px;
+    padding: 20px;
+
+}
+.piclink1 a {
+    color: black;
+}
+
+.piclink2{
+    display: inline-block ;
+    background-color: #f7f7f7;
+    box-shadow: black;
+    width: 800px;
+    padding: 20px;
+
+}
+
+.piclink3{
+    display: inline-block ;
+    background-color: #f7f7f7;
+    box-shadow: black;
+    width: 800px;
+    height: 800px;
+    padding: 20px;
+
 }
 
 .Kontakt{
     color: #000000;
     font-weight: bolder;
-    position: relative;;
-    margin-left: 10px;
-    margin-top: -500px;
-}
-
-.contactform{
-    background: lightgrey;
-    font-size: 9pt;
-   
+    margin-left: -220px;
 }
 
 
 .Datenschutz{
     font-size: 9pt;
-    color: lightgray;
-    width: 600px;
-    margin-left: 200px;
+    font-style: italic;
+    text-align: left;
+    color: rgb(0, 0, 0);
+    width: 400px;
+    margin-left: 100px;
 }
 
-.absenden{
-    font-size: 9pt;
-    color: white;
-    background: lightgray;
-    width: 55px;
-    padding: 5px 5px 5px 5px;
-    margin-left: 200px;
+
+.contactlist{
+    list-style: none;
+    margin-top: 900px;
+    margin-left: 500px;
+    margin-bottom: 100px;
+}
+
+.contactform{
+    font: arial ;
+    background-color: #f7f7f7;
+    margin-left: 100px;
+    margin-top: 180px ;
+    text-align: left;
+
+}
+
+.fuwalink{
+    color: rgb(0, 0, 0);
 }
 
 #footer {
