@@ -4,6 +4,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
 h1{
     color: #f7f7f7;
     text-align: left;
@@ -11,10 +12,8 @@ h1{
     letter-spacing: -12px;
     width: 600px;
     margin-left: 500px ;
-    margin-top: -890px ;
+    margin-top: -830px ;
     margin-bottom: 300px;
-
-
 }
 
 h2{
@@ -58,7 +57,7 @@ h4{
     position: fixed;
     right: 0;
     top: 0;
-    width: 100%;
+    width: 25%;
     border-radius: 0px 0px 20px 20px;
 }
 
@@ -75,7 +74,7 @@ h4{
 }
 
 .navi a:link, a:visited {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: lighter;
     text-decoration: none;
     text-align: right;
@@ -106,10 +105,10 @@ div a.activepage1{
 .circle{
     
     position: static;
-
     width: 1000px;
     height: 500px;
-    margin-bottom: 400px;
+    margin-bottom: 350px;
+    margin-top: -11px;
 }
 
 
@@ -144,8 +143,7 @@ a .piclink1 {
     display: inline-block ;
     background-color: #f7f7f7;
     box-shadow: black;
-    width: 800px;
-    height: 800px;
+    width: 400px;
     padding: 20px;
 
 }
