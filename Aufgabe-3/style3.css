@@ -32,12 +32,16 @@ h3{
     font-size: 44px;
     letter-spacing: -5px;
     margin-bottom: 10px;
+    text-align: left;
+    margin-left: 430px;
 
 }
 
 h4{
     font-style: italic;
     margin-top: -10px;
+    text-align: left;
+    margin-left: 430px;
 }
 
 .subtext{
@@ -46,7 +50,7 @@ h4{
     font-size: 20px;
     margin-left: 450px;
     margin-top: -290px;
-    margin-bottom: 300px ;
+    margin-bottom: 250px ;
     text-align:right;
 }
 
@@ -187,6 +191,7 @@ a .piclink1 {
 
 #footer {
     background: #f7f7f7;
+    margin-top: 400px;
     padding-top: 50px;
     padding-bottom: 50px;
   }
