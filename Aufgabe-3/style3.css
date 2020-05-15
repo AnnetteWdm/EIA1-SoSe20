@@ -1,4 +1,6 @@
-
+html {
+    margin: 0px;
+}
 body{
     background-image: url("Fotos/bg.png");
     font-family: Arial, Helvetica, sans-serif;
@@ -11,7 +13,7 @@ h1{
     font-size: 115px;
     letter-spacing: -12px;
     width: 600px;
-    margin-left: 500px ;
+    margin-left: 32% ;
     margin-top: -850px ;
     margin-bottom: 300px;
 }
@@ -22,7 +24,7 @@ h2{
     font-size: 50px;
     letter-spacing: -6px;
     width: 900px;
-    margin-left: 150px;
+    margin-left: 12%;
     margin-top: -300px;
     margin-bottom: 300px;
 }
@@ -45,11 +47,20 @@ h4{
     margin-left: 430px;
 }
 
+h5{
+    color: rgb(0, 0, 0);
+    font-size: 44px;
+    font-weight: lighter;
+    letter-spacing: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
 .subtext{
     color: #f7f7f7;
     width: 600px;
     font-size: 20px;
-    margin-left: 450px;
+    margin-left: 30%;
     margin-top: -290px;
     margin-bottom: 250px ;
     text-align:right;
@@ -165,7 +176,7 @@ a .piclink1 {
     font-size: 9pt;
     font-style: italic;
     text-align: left;
-    color: rgb(0, 0, 0);
+    color: gray;
     width: 400px;
     margin-left: 150px;
 }
