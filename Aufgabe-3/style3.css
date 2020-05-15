@@ -11,7 +11,7 @@ h1{
     letter-spacing: -12px;
     width: 600px;
     margin-left: 500px ;
-    margin-top: -900px ;
+    margin-top: -890px ;
     margin-bottom: 300px;
 
 
@@ -58,8 +58,8 @@ h4{
     position: fixed;
     right: 0;
     top: 0;
-    width: 50%;
-    border-radius: 0px 0px 10px 10px;
+    width: 100%;
+    border-radius: 0px 0px 20px 20px;
 }
 
 .navi1{
@@ -74,17 +74,15 @@ h4{
     border-right: solid 1px #f7f7f7;
 }
 
-a:link, a:visited {
-        text-decoration: none;
-        color: #f7f7f7;
+.navi a:link, a:visited {
+    font-size: 25px;
+    font-weight: lighter;
+    text-decoration: none;
+    text-align: right;
+    color: #f7f7f7;
 }
- a:hover {
+a:hover {
     opacity: 0.7;
- }
-
- a.active{
-     color: lightgray;
-     text-decoration: underline;
  }
 
 
@@ -120,7 +118,8 @@ div a.activepage1{
 
 }
 
-.piclink1{
+.piclink1 {
+    color: black;
     display: inline-block ;
     background-color: #f7f7f7;
     box-shadow: black;
@@ -128,7 +127,7 @@ div a.activepage1{
     padding: 20px;
 
 }
-.piclink1 a {
+a .piclink1 {
     color: black;
 }
 
@@ -152,9 +151,10 @@ div a.activepage1{
 }
 
 .Kontakt{
+    text-align: left;
     color: #000000;
     font-weight: bolder;
-    margin-left: -220px;
+    margin-left: 150px;
 }
 
 
@@ -164,22 +164,21 @@ div a.activepage1{
     text-align: left;
     color: rgb(0, 0, 0);
     width: 400px;
-    margin-left: 100px;
+    margin-left: 150px;
 }
 
 
 .contactlist{
     list-style: none;
-    margin-top: 900px;
-    margin-left: 500px;
+    margin-top: 50px;
+    margin-left: 150px;
     margin-bottom: 100px;
 }
 
 .contactform{
     font: arial ;
-    background-color: #f7f7f7;
-    margin-left: 100px;
-    margin-top: 180px ;
+    margin-left: 150px;
+    margin-top: -370px ;
     text-align: left;
 
 }
