@@ -75,14 +75,14 @@ section>.Muschel3{
 }
 
 .Muschelperle1:hover{
-    visibility: hidden;
+    opacity: 0 ;
 }
 
 .Muschelperle2:hover{
-    visibility: hidden;
+    opacity: 0 ;
 }
 
 .Muschelperle3:hover{
-    visibility: hidden;
+    opacity: 0 ;
 }
 
