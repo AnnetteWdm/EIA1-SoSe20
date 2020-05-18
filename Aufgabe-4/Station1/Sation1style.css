@@ -1,0 +1,71 @@
+
+
+section{
+    height: 400px;
+    width: 600px;
+    margin-top: 300px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position:relative;
+}
+
+section>.Karte{
+    height: auto;
+    width: auto;
+    margin-top: 0px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position:absolute;
+}
+
+section>.pingu{
+    position: absolute;
+    left: 530px;
+    top: 280px;
+    bottom: 0px;
+    right: 0px;
+    height: 100px;
+    width:100px;
+}
+
+section>.shell{
+    position: absolute;
+    left: -40px;
+    top: 280px;
+    bottom: 0px;
+    right: 0px;
+    width: 200px;
+    height: 142px;
+}
+
+section>.Willkommen{
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    bottom: 0px;
+    right: 0px;
+    width: auto;
+    height: 142px;
+    color: white;
+}
+
+section>.Text{
+    position: absolute;
+    left: 100px;
+    top: 160px;
+    bottom: 200px;
+    right: 0px;
+    width: 400px;
+    height: 142px;
+    color: white;
+}
+
+
+
+body{
+    background-image: url("bg.png");
+}

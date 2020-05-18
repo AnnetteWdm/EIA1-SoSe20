@@ -1,0 +1,47 @@
+body{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+    text-align: center;
+}
+
+.button{
+    color: rgb(0, 0, 0);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    width: 150px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 10px;
+}
+.button1{
+    background-color: rgb(255, 208, 202);
+}
+
+.button2{
+    background-color: rgb(255, 247, 174);
+}
+
+.button3{
+    background-color: rgb(195, 255, 195);
+}
+
+.button4{
+    background-color: rgb(169, 255, 251);
+}
+
+.button5{
+    background-color: rgb(255, 205, 255);
+}
+
+.button:hover{
+    opacity: 0.5;
+}
+
+h1{
+    margin-top:50px;
+    margin-bottom: 40px;
+}

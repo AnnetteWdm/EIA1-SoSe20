@@ -1,0 +1,28 @@
+section{
+    height: 400px;
+    width: 600px;
+    margin-top: 300px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position:relative;
+}
+
+section>.Banderole{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+section>iframe{
+    position: absolute;
+    height: 250px;
+    width: 450px;
+    right: 70px;
+    top: 70px;
+}
+
+body{
+    background-image: url("bg.png");
+}

@@ -1,0 +1,40 @@
+section{
+    height: 400px;
+    width: 600px;
+    margin-top: 300px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position:relative;
+  
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(fonts/myfont-regular-webfont.woff), url(fonts/myfont-regular-webfont.woff2), url(fonts/Myfont-Regular.otf), url(fonts/Myfont-Regular.ttfs);
+
+  }
+
+p{
+    font-family: myFirstFont;
+    color: white;
+    position: absolute;
+    margin: 50px;
+    top: 100px;
+    font-size: 20px;
+}
+
+h1{
+    font-family: myFirstFont;
+    color: white;
+    position: absolute;
+    margin: 50px;
+    font-size: 40px;
+}
+
+
+
+body{
+    background-image: url("bg.png");
+}

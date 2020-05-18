@@ -1,0 +1,88 @@
+section{
+    height: 400px;
+    width: 600px;
+    margin-top: 300px;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    position:relative;
+}
+
+body{
+    background-image: url("bg.png");
+}
+
+
+section>.Muschelperle1{
+    position: absolute;
+    left: 400px;
+    top: 250px;
+    bottom: 0px;
+    right: 0px;
+    height: 70px;
+    width:64px;
+}
+
+section>.Muschelperle2{
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    bottom: 0px;
+    right: 0px;
+    height: 70px;
+    width:64px;
+}
+
+section>.Muschelperle3{
+    position: absolute;
+    left: 250px;
+    top: 100px;
+    bottom: 0px;
+    right: 0px;
+    height: 70px;
+    width:64px;
+}
+
+section>.Muschel1{
+    position: absolute;
+    left: 400px;
+    top: 250px;
+    bottom: 0px;
+    right: 0px;
+    height: 70px;
+    width:64px;
+}
+
+section>.Muschel2{
+    position: absolute;
+    left: 100px;
+    top: 200px;
+    bottom: 0px;
+    right: 0px;
+    height: 70px;
+    width:64px;
+}
+
+section>.Muschel3{
+    position: absolute;
+    left: 250px;
+    top: 100px;
+    bottom: 0px;
+    right: 0px;
+    height: 70px;
+    width:64px;
+}
+
+.Muschelperle1:hover{
+    visibility: hidden;
+}
+
+.Muschelperle2:hover{
+    visibility: hidden;
+}
+
+.Muschelperle3:hover{
+    visibility: hidden;
+}
+
