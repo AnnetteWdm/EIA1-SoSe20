@@ -13,6 +13,17 @@ body{
     background-image: url("bg.png");
 }
 
+h1{
+    display: inline-block;
+    position: absolute;
+    font-size: 40px;
+    font-weight: bolder;
+    text-align: left;
+    margin-top: -20px;
+    left: 700px;
+    color: white;
+}
+
 
 section>.Muschelperle1{
     position: absolute;
