@@ -11,7 +11,8 @@ section{
 }
 
 @font-face {
-
+    font-family: myFirstFont;
+    src: url(fonts/bohemian-webfont.woff2);
   }
 
 p{
