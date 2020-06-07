@@ -1,11 +1,19 @@
 "use strict";
-var europe = 4965.7 + 4616.4 + 4705.8 + 4615.2 + 4541.5 + 4436.9 + 4202 + 4191.6 + 4247.3 + 4278.7 + 4209.3;
-var northamerica = 6600.4 + 6139.9 + 6375.8 + 6262.8 + 5998.9 + 6167 + 6268.9 + 6048.7 + 5938.3 + 5920.5 + 6035.6;
-var africa = 1028 + 1041.9 + 1072.1 + 1073.7 + 1107.1 + 1134.4 + 1167.1 + 1174.5 + 1192.1 + 1207 + 1235.5;
-var asia = 12954.7 + 13246.6 + 13986.8 + 14860.1 + 15308.8 + 15660.2 + 15787.7 + 15877 + 15984 + 16274.3 + 16274.1;
-var southamerica = 1132.6 + 1093.1 + 1164.2 + 1215.5 + 1262 + 1308.9 + 1331.3 + 1321.7 + 1294.7 + 1279.2 + 1261.5;
-var australia = 1993 + 1875.7 + 1939.1 + 2035.2 + 2063.2 + 2014.7 + 2027.6 + 1986.8 + 1997.4 + 2001.3 + 2100.5;
-// Worlds total emission//
+//Total of emission between 2008 and 2018//
+var europetot = 4965.7 + 4616.4 + 4705.8 + 4615.2 + 4541.5 + 4436.9 + 4202 + 4191.6 + 4247.3 + 4278.7 + 4209.3;
+var northamericatot = 6600.4 + 6139.9 + 6375.8 + 6262.8 + 5998.9 + 6167 + 6268.9 + 6048.7 + 5938.3 + 5920.5 + 6035.6;
+var africatot = 1028 + 1041.9 + 1072.1 + 1073.7 + 1107.1 + 1134.4 + 1167.1 + 1174.5 + 1192.1 + 1207 + 1235.5;
+var asiatot = 12954.7 + 13246.6 + 13986.8 + 14860.1 + 15308.8 + 15660.2 + 15787.7 + 15877 + 15984 + 16274.3 + 16274.1;
+var southamericatot = 1132.6 + 1093.1 + 1164.2 + 1215.5 + 1262 + 1308.9 + 1331.3 + 1321.7 + 1294.7 + 1279.2 + 1261.5;
+var australiatot = 1993 + 1875.7 + 1939.1 + 2035.2 + 2063.2 + 2014.7 + 2027.6 + 1986.8 + 1997.4 + 2001.3 + 2100.5;
+// Emission 2018//
+var europe = 4209.3;
+var northamerica = 6035.6;
+var africa = 1235.5;
+var asia = 16274.1;
+var southamerica = 1261.5;
+var australia = 2100.0;
+// Worlds total emission 2018//
 var world = europe + northamerica + africa + asia + southamerica + australia;
 // Relative to worlds total emission//
 var euw = (europe / world) * 100;
@@ -22,12 +30,12 @@ var asdif = 16274.1 - 12954.7;
 var sadif = 1261.5 - 1132.6;
 var audif = 2100.5 - 1993;
 // Growth rate in % between 2008 and 2018
-var eupro = (eudif / europe) * 100;
-var napro = (nadif / northamerica) * 100;
-var afpro = (afdif / africa) * 100;
-var aspro = (asdif / asia) * 100;
-var sapro = (sadif / southamerica) * 100;
-var aupro = (audif / australia) * 100;
+var eupro = (eudif / europetot) * 100;
+var napro = (nadif / northamericatot) * 100;
+var afpro = (afdif / africatot) * 100;
+var aspro = (asdif / asiatot) * 100;
+var sapro = (sadif / southamericatot) * 100;
+var aupro = (audif / australiatot) * 100;
 window.addEventListener("load", function () {
     // Europe//
     document.querySelector(".europeimg").addEventListener("click", clickEU);
