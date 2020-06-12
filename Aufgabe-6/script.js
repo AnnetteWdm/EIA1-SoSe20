@@ -62,7 +62,7 @@ window.addEventListener("load", function () {
         document.getElementById("emission").innerHTML = northamerica;
         document.getElementById("worldrelative").innerHTML = naw.toFixed(2) + "%";
         document.getElementById("growthrate").innerHTML = napro.toFixed(2) + "%";
-        document.getElementByI("growth").innerHTML = nadif.toFixed(2);
+        document.getElementById("growth").innerHTML = nadif.toFixed(2);
         document.querySelector('.chart').setAttribute('style', 'height:' + naw + 'px');
     }
     //Africa//
