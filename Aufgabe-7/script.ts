@@ -28,10 +28,10 @@ document.querySelector("#playbutton").addEventListener("click", function() {Drum
 function DrumMachine(beat) { 
 	var i: number = 0;
 	//window.alert(anzahl);
-	setInterval(function() {
+	setInterval(function() {  //Inpiriert von Marie beim Praktikum//
 		var Sample = new Audio(beat[i]);
 		Sample.play();
 		console.log(beat[i]);
-		i++; //i=i+1
+		i++;
 	}, 500); 
 } 
