@@ -27,7 +27,13 @@
  function playSample(ButtonNumber) { 
 
     var sound: HTMLAudioElement = new Audio(allSounds[ButtonNumber]);
-    sound.play(sound);
+    sound.play();
+
+    if (isrecording == true){
+     beat1.push(allSounds[ButtonNumber]);
+     console.log(beat1);
+
+    }
   } 
 
 
@@ -35,74 +41,68 @@
 
  var beat1 = ["Sounds/kick.mp3", "Sounds/snare.mp3", "Sounds/hihat.mp3"];
 
- document.querySelector("#playbutton").addEventListener("click", function() {DrumMachine(beat1); });
+ document.querySelector(".fa-play").addEventListener("click", function() {
+  
+  var playbut: HTMLElement = document.querySelector("#playbutton");
+
+  if (playbut.classList.contains ("fa-play")) {
+    playbut.classList.remove ("fa-play");
+    playbut.classList.add ("fa-stop");
+    DrumMachine(beat1);
+  } else {
+    playbut.classList.remove ("fa-stop");
+    playbut.classList.add ("fa-play");
+    stopbeat();       
+  }
+  });
 
 //Aufgabe 8//
 //8.1 Linter ist Installiert//
 
-//8.2 Beat als Loop// //Keine Ahnung wie ich des machen soll--schleife??//
+//8.2 Beat als Loop// //funktioniert//
 
- function DrumMachine(beat) { 
-  var i: number = 0;
+ var i: number = 0;
+ var myinterval: number;
+
+ function stopbeat() {
+  clearInterval(myinterval); }
   
-  setInterval(function() { 
+ function DrumMachine(beat) { 
+
+  //8.3 Playbutton erweiterung// //Funktioniert//
+ 
+  myinterval = setInterval(function() { 
     var Sample = new Audio(beat[i]);
     Sample.play();
     console.log(beat[i]);
     i++;
-
-  },          500); 
+    if (i > 2) { i  = 0; }  //Wenn i grösser als 3 dann soll i wieder 0 werden//
+  },                         500); 
 } 
 
-//8.3 PlayButton Erweiterung//
 
- function DrumMachine(beat, loopnumber)
-
-  //Klasse ändern für Css// //Wenn button Klaase play hat, dann auf Stop ändern. Wenn Klasse Stop hat dann auf play ändern//
- var but = document.querySelector("#playbutton");
-
- if (but.getAttribute("class") == "play") {
-    but.setAttribute("class", "stop");
-    functionIsRunning = true;
-
-  } else {
-    but.setAttribute("class", "stop");
-    functionIsRunning = false;
-  }
-
-//8.4 Deletebutton// //funktioniert ned//
- document.querySelector("#deletebu").addEventListener("click", function() {deletebeat(); });
+//8.4 Deletebutton// //funktioniert//
+ document.querySelector("#deletebutton").addEventListener("click", function() {deletebeat(); });
 
  function deletebeat() {
   beat1.length = 0;
 }
 
 //8.5 Recordbutton// // Click auf recordbu-> recording, click auf button -> push sound into array beat1 //
- document.querySelector("#recordbu").addEventListener("click", function() {recording(); });
 
+ document.querySelector("#recordbutton").addEventListener("click", function() {recording(); });
+ var isrecording: Boolean = false;
+ 
  function recording() {
+  isrecording = true;
+ }
+//Wenn aufgenommen wird, soll der jeweilige Beat gepusht werden// //funktioniert ned//
+ 
 
-  var but = document.querySelector("#recordbu");
 
-  if (but.getAttribute("class") == "notrecording") { // für css wenn klasse notrecording dann zu recording
-    but.setAttribute("class", "recording");
-    isrecording = true; 
-    console.log("Aufnahme gestartet");
-
-  } else {
-    btn.setAttribute("class", "notrecording"); //ansonsten auf notrecording
-    isRecording = false;
-    console.log("Aufnahme gestoppt");
-  }
-}
-  //Wenn aufgenommen wird, soll der jeweilige Beat gepusht werden// //funktioniert ned//
- if (isrecording == true) {
-  console.log("Sample: " + sound.src);
-  beat1.push(sound.src);
-}
 
 //Extra-Aufgabe: Keydown Event mit Googles Hilfe//
-
+/*
 //Tastennamen???//
  window.addEventListener("keydown", logKey);
 
@@ -147,5 +147,6 @@
     recording();
     break;
     }
-}
-});
+} 
+})
+*/

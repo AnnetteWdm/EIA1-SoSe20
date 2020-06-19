@@ -28,51 +28,22 @@ button:hover {
 
 playbutton
 
-#playbutton{
-    background-color: #ffa600;
+#playbutton {
+    color: #ffa600;
     text-align: center;
     padding: 80px 80px;
     cursor: pointer;
 }
 
 #playbutton:hover {
-    background-color: #000000 ;
+    background-color: #ffa600 ;
   }
-  #playbutton:before{
-    font-family: 'FontAwesome';
-    font-size:5em;
-    content: "\f04b";
-}
+
 
 
 #playbutton.play{
     background-color: #fdf188;
 }
-#playbutton.play:before{
-    font-family: 'FontAwesome';
-    font-size:5em;
-    content: "\f04b";
-}
-
-#playbutton.pause{
-    background-color: #d13100;
-}
-#playbutton.pause:before{
-    font-family: 'FontAwesome';
-    font-size:5em;
-    content: '\f04c';
-}
-
-#playbutton.stop{
-    background-color: #d13100;
-}
-#playbutton.stop:before{
-    font-family: 'FontAwesome';
-    font-size:5em;
-    content: "\f04d"
-}
-
-
 
 deletebutton
 

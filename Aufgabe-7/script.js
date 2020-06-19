@@ -1,4 +1,3 @@
-"use strict";
 //Aufgabe 7.1//
 var s1 = new Audio("A.mp3");
 var s2 = new Audio("C.mp3");
