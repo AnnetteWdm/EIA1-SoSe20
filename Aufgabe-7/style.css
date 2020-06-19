@@ -16,6 +16,8 @@ button:hover {
     background-color: #be5111;
   }
 
+#playbutton{ padding: 150px 150px 
+}
 
 #playbutton:hover {
     background-color: #ffa600;

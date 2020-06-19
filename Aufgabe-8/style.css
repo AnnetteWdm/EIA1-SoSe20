@@ -1,0 +1,128 @@
+body {
+    text-align: center;
+    background-color: #ffffff;
+}
+
+h1{
+text-align: center;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+font-size: 50px ;
+color: #be5111;
+}
+
+
+
+button{
+    background-color:  #ffa600;
+    text-align: center;
+    border-radius: 20px;
+    padding: 150px 150px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #be5111;
+  }
+
+
+playbutton
+
+#playbutton{
+    background-color: #ffa600;
+    text-align: center;
+    padding: 80px 80px;
+    cursor: pointer;
+}
+
+#playbutton:hover {
+    background-color: #000000 ;
+  }
+  #playbutton:before{
+    font-family: 'FontAwesome';
+    font-size:5em;
+    content: "\f04b";
+}
+
+
+#playbutton.play{
+    background-color: #fdf188;
+}
+#playbutton.play:before{
+    font-family: 'FontAwesome';
+    font-size:5em;
+    content: "\f04b";
+}
+
+#playbutton.pause{
+    background-color: #d13100;
+}
+#playbutton.pause:before{
+    font-family: 'FontAwesome';
+    font-size:5em;
+    content: '\f04c';
+}
+
+#playbutton.stop{
+    background-color: #d13100;
+}
+#playbutton.stop:before{
+    font-family: 'FontAwesome';
+    font-size:5em;
+    content: "\f04d"
+}
+
+
+
+deletebutton
+
+#deletebu{
+    background-color:  #ffa600;
+    text-align: center;
+    padding: 80px 80px;
+    cursor: pointer;
+}
+
+#deletebu:hover {
+  background-color: #000000;
+}
+
+#deletebu:before{
+    font-family: 'FontAwesome';
+    font-size:5em;
+    content: "\f1f8"
+}
+
+
+recordbutton
+
+#recordbu{
+    background-color:  #ffa600;
+    text-align: center;
+    padding: 80px 80px;
+    cursor: pointer;
+}
+
+#recordbu:hover {
+  background-color: #000000;
+}
+
+#recordbu.notrecording{
+    background-color:  #ffa600;
+    text-align: center;
+    padding: 100px 100px;
+    cursor: pointer;
+}
+
+#recordbu.recording{
+    background-color:  #d13100;
+    text-align: center;
+    padding: 100px 100px;
+    cursor: pointer;
+}
+
+#recordbu:before{
+    font-family: 'FontAwesome';
+    font-size:5em;
+    content: "\f130"
+}
