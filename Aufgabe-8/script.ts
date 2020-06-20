@@ -21,6 +21,7 @@
  document.querySelector("#bu8").addEventListener("click", function() {playSample(7); });
  document.querySelector("#bu9").addEventListener("click", function() {playSample(8); });
 
+//Aufgabe 8// //Mit Hilfe von Hannah, Herr Rausch und Moritz :)) //
 
 //Aufgabe 8.6 a) Abspielen der Samples über eine zentrale Funktion//
 
@@ -45,7 +46,7 @@
   
   var playbut: HTMLElement = document.querySelector("#playbutton");
 
-  if (playbut.classList.contains ("fa-play")) {
+  if (playbut.classList.contains ("fa-play")) { //8.3 Playbutton erweiterung// //Funktioniert//
     playbut.classList.remove ("fa-play");
     playbut.classList.add ("fa-stop");
     DrumMachine(beat1);
@@ -56,7 +57,6 @@
   }
   });
 
-//Aufgabe 8// //Mit Hilfe von Hannah, Herr Rausch und Moritz :)) //
 //8.1 Linter ist Installiert//
 
 //8.2 Beat als Loop// //funktioniert//
@@ -68,8 +68,6 @@
   clearInterval(myinterval); }
   
  function DrumMachine(beat) { 
-
-  //8.3 Playbutton erweiterung// //Funktioniert//
  
   myinterval = setInterval(function() { 
     var Sample = new Audio(beat[i]);
