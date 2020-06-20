@@ -56,7 +56,7 @@
   }
   });
 
-//Aufgabe 8//
+//Aufgabe 8// //Mit Hilfe von Hannah, Herr Rausch und Moritz :)) //
 //8.1 Linter ist Installiert//
 
 //8.2 Beat als Loop// //funktioniert//
@@ -88,7 +88,7 @@
   beat1.length = 0;
 }
 
-//8.5 Recordbutton// // Click auf recordbu-> recording, click auf button -> push sound into array beat1 //
+//8.5 Recordbutton// // Click auf recordbu-> recording, click auf button -> push sound into array beat1 // funktioniert//
 
  document.querySelector("#recordbutton").addEventListener("click", function() {recording(); });
  var isrecording: Boolean = false;
@@ -96,14 +96,12 @@
  function recording() {
   isrecording = true;
  }
-//Wenn aufgenommen wird, soll der jeweilige Beat gepusht werden// //funktioniert ned//
+
  
-
-
 
 //Extra-Aufgabe: Keydown Event mit Googles Hilfe//
 /*
-//Tastennamen???//
+//Funktioniert ned//
  window.addEventListener("keydown", logKey);
 
  function logKey(e) {

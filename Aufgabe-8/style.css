@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background-color: #ffffff;
+    background-color: #000000;
 }
 
 h1{
@@ -26,74 +26,23 @@ button:hover {
   }
 
 
-playbutton
-
-#playbutton {
-    color: #ffa600;
+.fas{
+    color: #ffffff;
     text-align: center;
-    padding: 80px 80px;
     cursor: pointer;
+    font-size: 100px;
+    padding-left: 50px;
+    padding-top: 20px;
 }
 
-#playbutton:hover {
-    background-color: #ffa600 ;
-  }
-
-
-
-#playbutton.play{
-    background-color: #fdf188;
+.fas:hover{ 
+    color: #be5111;
 }
 
-deletebutton
-
-#deletebu{
-    background-color:  #ffa600;
-    text-align: center;
-    padding: 80px 80px;
-    cursor: pointer;
+.fa-stop{
+    color: crimson;
 }
 
-#deletebu:hover {
-  background-color: #000000;
-}
-
-#deletebu:before{
-    font-family: 'FontAwesome';
-    font-size:5em;
-    content: "\f1f8"
-}
-
-
-recordbutton
-
-#recordbu{
-    background-color:  #ffa600;
-    text-align: center;
-    padding: 80px 80px;
-    cursor: pointer;
-}
-
-#recordbu:hover {
-  background-color: #000000;
-}
-
-#recordbu.notrecording{
-    background-color:  #ffa600;
-    text-align: center;
-    padding: 100px 100px;
-    cursor: pointer;
-}
-
-#recordbu.recording{
-    background-color:  #d13100;
-    text-align: center;
-    padding: 100px 100px;
-    cursor: pointer;
-}
-
-#recordbu:before{
-    font-family: 'FontAwesome';
-    font-size:5em;
-    content: "\f130"
+.fa-stop:hover{
+    color: white;
 }
