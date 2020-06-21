@@ -1,15 +1,6 @@
  //Von Aufgabe 7//
- var s1: HTMLAudioElement = new Audio("A.mp3");
- var s2: HTMLAudioElement = new Audio("C.mp3");
- var s3: HTMLAudioElement = new Audio("F.mp3");
- var s4: HTMLAudioElement = new Audio("G.mp3");
- var s5: HTMLAudioElement = new Audio("hihat.mp3");
- var s6: HTMLAudioElement = new Audio("kick.mp3");
- var s7: HTMLAudioElement = new Audio("laugh-1.mp3");
- var s8: HTMLAudioElement = new Audio("laugh-2.mp3");
- var sound9: HTMLAudioElement = new Audio("snare.mp3");
-  
- var allSounds = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "Sounds/kick.mp3", "Sounds/laugh-1.mp3", "Sounds/laugh-2.mp3", "Sounds/snare.mp3"];
+ 
+ var allSounds: HTMLAudioElement = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "Sounds/kick.mp3", "Sounds/laugh-1.mp3", "Sounds/laugh-2.mp3", "Sounds/snare.mp3"];
 
  document.querySelector("#bu1").addEventListener("click", function() {playSample(0); });
  document.querySelector("#bu2").addEventListener("click", function() {playSample(1); });
@@ -30,7 +21,7 @@
     var sound: HTMLAudioElement = new Audio(allSounds[ButtonNumber]);
     sound.play();
 
-    if (isrecording == true){
+    if (isrecording == true) {
      beat1.push(allSounds[ButtonNumber]);
      console.log(beat1);
 
@@ -40,7 +31,7 @@
 
 //Aufgabe 8.6 b) Nur ein Array soll manipuliert werden: dieses hier://
 
- var beat1 = ["Sounds/kick.mp3", "Sounds/snare.mp3", "Sounds/hihat.mp3"];
+ var beat1:HTMLAudioElement = ["Sounds/kick.mp3", "Sounds/snare.mp3", "Sounds/hihat.mp3"];
 
  document.querySelector(".fa-play").addEventListener("click", function() {
   
@@ -63,7 +54,8 @@
 
  var i: number = 0;
  var myinterval: number;
-
+ var beat: HTMLAudioElement;
+ 
  function stopbeat() {
   clearInterval(myinterval); }
   
@@ -75,7 +67,7 @@
     console.log(beat[i]);
     i++;
     if (i > 2) { i  = 0; }  //Wenn i grösser als 3 dann soll i wieder 0 werden//
-  },                         500); 
+  },                       500); 
 } 
 
 
@@ -100,49 +92,47 @@
 //Extra-Aufgabe: Keydown Event mit Googles Hilfe//
 /*
 //Funktioniert ned//
- window.addEventListener("keydown", logKey);
-
+ window.addEventListener("keypress", logKey);
  function logKey(e) {
-  log.textContent += ` ${e.code}`;
+   console.log(e.code);
 
-  switch (e.code) {
-  case "":
+   switch (e.code) {
+  case "Digit1":
     playSample(0);
     break;
-  case "":
+  case "Digit2":
     playSample(1);
     break;
-  case "":
+  case "Digit3":
     playSample(2);
     break;
-  case "":
+  case "Digit4":
     playSample(3);
     break;
-  case "":
+  case "Digit5":
     playSample(4);
     break;
-  case "":
+  case "Digit6":
     playSample(5);
     break;
-  case "":
+  case "Digit7":
     playSample(6);
     break;
-  case "":
+  case "Digit8":
     playSample(7);
     break;
-  case "":
+  case "Digit9":
     playSample(8);
     break;
-  case "":
+  case "Space":
     DrumMachine(beat1);
     break;
-  case "":
+  case "Backspace":
     deletebeat();
     break;
-  case "":
+  case "KeyR":
     recording();
     break;
     }
-} 
-})
+}
 */
