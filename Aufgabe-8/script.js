@@ -50,7 +50,7 @@ function DrumMachine(beat) {
         i++;
         if (i >= beat1.length) {
             i = 0;
-        } //Wenn i grössergleich länge des arrays ist,  dann soll i wieder 0 werden//
+        } //Wenn i grössergleich länge des arrays ist,  dann soll i wieder 0 werden.//
     }, 500);
 }
 //8.4 Deletebutton// //funktioniert//

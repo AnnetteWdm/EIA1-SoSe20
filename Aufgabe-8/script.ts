@@ -66,7 +66,7 @@
     Sample.play();
     console.log(beat[i]);
     i++;
-    if (i >= beat1.length ) { i  = 0; }  //Wenn i grössergleich länge des arrays ist,  dann soll i wieder 0 werden//
+    if (i >= beat1.length ) { i  = 0; }  //Wenn i grössergleich länge des arrays ist,  dann soll i wieder 0 werden.//
   },                       500); 
 } 
 
