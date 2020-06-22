@@ -48,9 +48,9 @@ function DrumMachine(beat) {
         Sample.play();
         console.log(beat[i]);
         i++;
-        if (i > 2) {
+        if (i >= beat1.length) {
             i = 0;
-        } //Wenn i grösser als 3 dann soll i wieder 0 werden//
+        } //Wenn i grössergleich länge des arrays ist,  dann soll i wieder 0 werden//
     }, 500);
 }
 //8.4 Deletebutton// //funktioniert//
