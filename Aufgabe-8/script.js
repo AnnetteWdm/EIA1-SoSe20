@@ -1,13 +1,4 @@
 //Von Aufgabe 7//
-var s1 = new Audio("A.mp3");
-var s2 = new Audio("C.mp3");
-var s3 = new Audio("F.mp3");
-var s4 = new Audio("G.mp3");
-var s5 = new Audio("hihat.mp3");
-var s6 = new Audio("kick.mp3");
-var s7 = new Audio("laugh-1.mp3");
-var s8 = new Audio("laugh-2.mp3");
-var sound9 = new Audio("snare.mp3");
 var allSounds = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "Sounds/kick.mp3", "Sounds/laugh-1.mp3", "Sounds/laugh-2.mp3", "Sounds/snare.mp3"];
 document.querySelector("#bu1").addEventListener("click", function () { playSample(0); });
 document.querySelector("#bu2").addEventListener("click", function () { playSample(1); });
@@ -18,6 +9,7 @@ document.querySelector("#bu6").addEventListener("click", function () { playSampl
 document.querySelector("#bu7").addEventListener("click", function () { playSample(6); });
 document.querySelector("#bu8").addEventListener("click", function () { playSample(7); });
 document.querySelector("#bu9").addEventListener("click", function () { playSample(8); });
+//Aufgabe 8// //Mit Hilfe von Hannah, Herr Rausch und Moritz :)) //
 //Aufgabe 8.6 a) Abspielen der Samples über eine zentrale Funktion//
 function playSample(ButtonNumber) {
     var sound = new Audio(allSounds[ButtonNumber]);
@@ -31,7 +23,7 @@ function playSample(ButtonNumber) {
 var beat1 = ["Sounds/kick.mp3", "Sounds/snare.mp3", "Sounds/hihat.mp3"];
 document.querySelector(".fa-play").addEventListener("click", function () {
     var playbut = document.querySelector("#playbutton");
-    if (playbut.classList.contains("fa-play")) {
+    if (playbut.classList.contains("fa-play")) { //8.3 Playbutton erweiterung// //Funktioniert//
         playbut.classList.remove("fa-play");
         playbut.classList.add("fa-stop");
         DrumMachine(beat1);
@@ -42,16 +34,15 @@ document.querySelector(".fa-play").addEventListener("click", function () {
         stopbeat();
     }
 });
-//Aufgabe 8// //Mit Hilfe von Hannah, Herr Rausch und Moritz :)) //
 //8.1 Linter ist Installiert//
 //8.2 Beat als Loop// //funktioniert//
 var i = 0;
 var myinterval;
+var beat;
 function stopbeat() {
     clearInterval(myinterval);
 }
 function DrumMachine(beat) {
-    //8.3 Playbutton erweiterung// //Funktioniert//
     myinterval = setInterval(function () {
         var Sample = new Audio(beat[i]);
         Sample.play();
@@ -71,55 +62,58 @@ function deletebeat() {
 document.querySelector("#recordbutton").addEventListener("click", function () { recording(); });
 var isrecording = false;
 function recording() {
-    isrecording = true;
+    if (isrecording == false) {
+        isrecording = true;
+    }
+    else {
+        isrecording = false;
+    }
 }
 //Extra-Aufgabe: Keydown Event mit Googles Hilfe//
 /*
 //Funktioniert ned//
- window.addEventListener("keydown", logKey);
-
+ window.addEventListener("keypress", logKey);
  function logKey(e) {
-  log.textContent += ` ${e.code}`;
+   console.log(e.code);
 
-  switch (e.code) {
-  case "":
+   switch (e.code) {
+  case "Digit1":
     playSample(0);
     break;
-  case "":
+  case "Digit2":
     playSample(1);
     break;
-  case "":
+  case "Digit3":
     playSample(2);
     break;
-  case "":
+  case "Digit4":
     playSample(3);
     break;
-  case "":
+  case "Digit5":
     playSample(4);
     break;
-  case "":
+  case "Digit6":
     playSample(5);
     break;
-  case "":
+  case "Digit7":
     playSample(6);
     break;
-  case "":
+  case "Digit8":
     playSample(7);
     break;
-  case "":
+  case "Digit9":
     playSample(8);
     break;
-  case "":
+  case "Space":
     DrumMachine(beat1);
     break;
-  case "":
+  case "Backspace":
     deletebeat();
     break;
-  case "":
+  case "KeyR":
     recording();
     break;
     }
 }
-})
 */ 
 //# sourceMappingURL=script.js.map

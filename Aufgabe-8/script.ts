@@ -81,10 +81,15 @@
 //8.5 Recordbutton// // Click auf recordbu-> recording, click auf button -> push sound into array beat1 // funktioniert//
 
  document.querySelector("#recordbutton").addEventListener("click", function() {recording(); });
+ 
  var isrecording: Boolean = false;
  
  function recording() {
-  isrecording = true;
+  if (isrecording == false) {
+    isrecording = true;
+} else {
+    isrecording = false;
+}
  }
 
  
