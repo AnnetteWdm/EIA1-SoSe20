@@ -1,6 +1,6 @@
  //Von Aufgabe 7//
  
- var allSounds: HTMLAudioElement = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "Sounds/kick.mp3", "Sounds/laugh-1.mp3", "Sounds/laugh-2.mp3", "Sounds/snare.mp3"];
+ var allSounds: string[] = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "Sounds/kick.mp3", "Sounds/laugh-1.mp3", "Sounds/laugh-2.mp3", "Sounds/snare.mp3"];
 
  document.querySelector("#bu1").addEventListener("click", function() {playSample(0); });
  document.querySelector("#bu2").addEventListener("click", function() {playSample(1); });
@@ -31,7 +31,7 @@
 
 //Aufgabe 8.6 b) Nur ein Array soll manipuliert werden: dieses hier://
 
- var beat1:HTMLAudioElement = ["Sounds/kick.mp3", "Sounds/snare.mp3", "Sounds/hihat.mp3"];
+ var beat1: string[] = ["Sounds/kick.mp3", "Sounds/snare.mp3", "Sounds/hihat.mp3"];
 
  document.querySelector(".fa-play").addEventListener("click", function() {
   
