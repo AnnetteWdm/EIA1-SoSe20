@@ -1,7 +1,7 @@
 //Aufgabe 9//
 
 //Array in das die ToDos gepushed werden//
-let todoitems: string[] = ["spending my whole time on EIA", "HELVETE JÄVLA SKIT GUBBJÄVEL FITTMÖG KUKAPA FAN  ", "mental breakdown and heavy swearing", "no time for other stuff", "I dont want anymore"];
+let todoitems: string[] = ["spending my whole time on EIA", "HELVETE JÄVLA SKIT GUBBJÄVEL FITTMÖG KUKAPA FAN  ", "mental breakdown and heavy swearing", "no time for other stuff"];
 
 window.addEventListener("load", function () {
 
@@ -23,11 +23,12 @@ window.addEventListener("load", function () {
     });
 
     //Bei Drücken der Entertaste soll input ins Array gepushed werden// //natüüüürlich funktioniert es ned//
-    input.addEventListener("keyup", function(even) { 
+    input.addEventListener("keyup", function(event) { 
         if (event.keyCode == 13) {
             todoitems.push(input.value);
-            todolist();
-            input.value = ""; 
+            console.log(input);
+            todolist(); 
+            input.value = "";
         }
     });
 
@@ -40,19 +41,19 @@ window.addEventListener("load", function () {
             todobox.innerHTML += "<div>" + "<input type='checkbox'>"  + todoitems[index] + "<i class='fas fa-trash-alt'id=delete></i>" +  "</div>";
            
     // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // funktioniert ned//          
-            var close = document.getElementsByClassName("far fa-trash-alt");
-            var i;
-            for (i = 0; i < close.length; i++) {
-        close[i].onclick = function () {
-            var div = this.parentElement;
-            div.style.display = "none";
+            todobox.querySelector(".fa-trash-alt").addEventListener("click", function(): void {
+                console.log("delete"); //funktioniert bis hier aber nur beim ersten Punkt und to do wird ned gelöscht????//
+                todoitems.splice(index,1 );
+                todolist();
+    
+        });
+
         }
-    }
 
     // Totale Anzahl der Todos mit Array Länge//
 
-            var total: HTMLElement = document.querySelector("#total");
-            total.innerHTML = todoitems.length;
+        var total: HTMLElement = document.querySelector("#total");
+        total.innerHTML = todoitems.length;
     }
     }
 });
