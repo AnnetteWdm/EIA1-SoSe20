@@ -42,6 +42,7 @@ window.addEventListener("load", function () {
      // Totale Anzahl der Todos mit Array Länge//   
             var total: HTMLElement = document.querySelector("#total");
             total.innerHTML = todoitems.length;
+            
     // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // löschen funktioniert jetzt aber nach dem löschen wird die anzahl nicht erneuert?//          
             var close: HTMLElement = document.getElementsByClassName("fas fa-trash-alt");
             var i;
