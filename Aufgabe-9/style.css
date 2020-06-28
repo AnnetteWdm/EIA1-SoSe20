@@ -1,0 +1,50 @@
+body{
+    text-align: center;
+    background-color: rgb(58, 66, 75);
+}
+h1{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: snow;
+}
+.totalnumber{
+    color: rgb(255, 145, 0);
+    text-align: left;
+    margin-left: 200px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+.addlist{
+    color: snow;
+    margin: 20px;
+}
+.fa-trash-alt{
+    color: rgb(255, 145, 0);
+    cursor: pointer;
+    margin-left: 10px;
+}
+.fa-trash-alt:hover{
+    color: rgb(255, 0, 0);
+}
+#input{
+    width: 300px;
+    height: 30px;
+    border-radius: 50px;
+}
+
+#But1{
+    border-radius: 600px;
+    margin-top: 10px;
+    width: 60px;
+    height: 60px;
+}
+#But1:hover{
+    color: rgb(255, 145, 0);
+}
+
+.addlist{
+    
+    text-align: left;
+    margin-left: 200px;
+    line-height: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
