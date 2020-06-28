@@ -27,14 +27,16 @@ window.addEventListener("load", function () {
     function todolist() {
         todobox.innerHTML = "";
         for (var index = 0; index < todoitems.length; index++) {
-            todobox.innerHTML += "<li id='liste'>" + "<input type='checkbox' id= 'done'>" + todoitems[index] + "<i class='fas fa-trash-alt'>" + "</i> " + "</li>";
-            // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // funktioniert ned, nur der erste listenpunkt kann gelöscht werden???//          
-            todobox.querySelector(".fa-trash-alt").addEventListener("click", function () {
-                console.log("delete");
-                todoitems.splice(index);
-                var element = document.getElementById("liste");
-                element.parentNode.removeChild(element);
-            });
+            todobox.innerHTML += "<div id='box'>" + "<input type='checkbox' id='checkbox'>" + todoitems[index] + "<i class='fas fa-trash-alt'></i>" + "</div>";
+            // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // löschen funktioniert jetzt aber nach dem löschen wird die anzahl nicht erneuert?//          
+            var close = document.getElementsByClassName("fas fa-trash-alt");
+            var i;
+            for (i = 0; i < close.length; i++) {
+                close[i].onclick = function () {
+                    var div = this.parentElement;
+                    div.style.display = "none";
+                };
+            }
             // Totale Anzahl der Todos mit Array Länge//
             var total = document.querySelector("#total");
             total.innerHTML = todoitems.length;
