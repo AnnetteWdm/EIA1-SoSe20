@@ -1,7 +1,7 @@
 //Aufgabe 9//
 
 //Array in das die ToDos gepushed werden//
-let todoitems: string[] = ["spending my whole time on EIA", "HELVETE JÄVLA SKIT GUBBJÄVEL FITTMÖG KUKAPA FAN  ", "mental breakdown and heavy swearing", "no time for other stuff"];
+let todoitems: string[] = ["spending my whole time on EIA", "HELVETE JÄVLA SKIT GUBBJÄVEL FITTMÖG KUKAPA FAN  ", "mental breakdown and heavy swearing", "no time for other stuff", "I dont want anymore"];
 
 window.addEventListener("load", function () {
 
@@ -26,9 +26,8 @@ window.addEventListener("load", function () {
     input.addEventListener("keyup", function(even) { 
         if (event.keyCode == 13) {
             todoitems.push(input.value);
-            input.value = "";
-            console.log("input"); 
-            todolist();  
+            todolist();
+            input.value = ""; 
         }
     });
 
@@ -41,19 +40,19 @@ window.addEventListener("load", function () {
             todobox.innerHTML += "<div>" + "<input type='checkbox'>"  + todoitems[index] + "<i class='fas fa-trash-alt'id=delete></i>" +  "</div>";
            
     // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // funktioniert ned//          
-            todobox.querySelector(".fa-trash-alt").addEventListener("click", function(): void {
-                console.log("delete");
-                todoitems.splice(index, 1);
-                todolist();
-    
-        });
-
+            var close = document.getElementsByClassName("far fa-trash-alt");
+            var i;
+            for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+            var div = this.parentElement;
+            div.style.display = "none";
         }
+    }
 
     // Totale Anzahl der Todos mit Array Länge//
 
-        var total: HTMLElement = document.querySelector("#total");
-        total.innerHTML = todoitems.length;
+            var total: HTMLElement = document.querySelector("#total");
+            total.innerHTML = todoitems.length;
     }
     }
 });
