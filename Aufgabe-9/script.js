@@ -1,6 +1,6 @@
 //Aufgabe 9//
 //Array in das die ToDos gepushed werden//
-let todoitems = ["spending my whole time on EIA", "HELVETE JÄVLA SKIT GUBBJÄVEL FITTMÖG KUKAPA FAN  ", "mental breakdown and heavy swearing", "no time for other stuff"];
+let todoitems = ["spending my whole time on EIA", "mental breakdown and heavy swearing", "no time for other stuff"];
 window.addEventListener("load", function () {
     var todobox = document.querySelector(".addlist");
     todolist();
@@ -28,6 +28,9 @@ window.addEventListener("load", function () {
         todobox.innerHTML = "";
         for (var index = 0; index < todoitems.length; index++) {
             todobox.innerHTML += "<div id='box'>" + "<input type='checkbox' id='checkbox'>" + todoitems[index] + "<i class='fas fa-trash-alt'></i>" + "</div>";
+            // Totale Anzahl der Todos mit Array Länge//   
+            var total = document.querySelector("#total");
+            total.innerHTML = todoitems.length;
             // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // löschen funktioniert jetzt aber nach dem löschen wird die anzahl nicht erneuert?//          
             var close = document.getElementsByClassName("fas fa-trash-alt");
             var i;
@@ -35,11 +38,10 @@ window.addEventListener("load", function () {
                 close[i].onclick = function () {
                     var div = this.parentElement;
                     div.style.display = "none";
+                    count--;
+                    document.getElementById("#total").innerHTML = String(count);
                 };
             }
-            // Totale Anzahl der Todos mit Array Länge//
-            var total = document.querySelector("#total");
-            total.innerHTML = todoitems.length;
         }
     }
 });
