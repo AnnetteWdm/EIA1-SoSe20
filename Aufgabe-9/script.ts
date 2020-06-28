@@ -38,18 +38,19 @@ window.addEventListener("load", function () {
     function todolist(): void {
         todobox.innerHTML = "";
         for (var index = 0; index < todoitems.length; index++) {
-            todobox.innerHTML += "<div>" + "<input type='checkbox'>"  + todoitems[index] + "<i class='fas fa-trash-alt'id=delete></i>" +  "</div>";
+            todobox.innerHTML += "<li id='liste'>" + "<input type='checkbox' id= 'done'>" + todoitems[index] + "<i class='fas fa-trash-alt'>" + "</i> " + "</li>";
            
     // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // funktioniert ned//          
             todobox.querySelector(".fa-trash-alt").addEventListener("click", function(): void {
                 console.log("delete"); //funktioniert bis hier aber nur beim ersten Punkt und to do wird ned gelöscht????//
-                todoitems.splice(index,1 );
-                todolist();
+                todoitems.splice(index);
+                var element = document.getElementById("liste");
+                element.parentNode.removeChild(element);
     
         });
 
         }
-
+    
     // Totale Anzahl der Todos mit Array Länge//
 
         var total: HTMLElement = document.querySelector("#total");
