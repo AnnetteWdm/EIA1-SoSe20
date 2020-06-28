@@ -26,9 +26,9 @@ window.addEventListener("load", function () {
     input.addEventListener("keyup", function(event) { 
         if (event.keyCode == 13) {
             todoitems.push(input.value);
-            console.log(input);
             todolist(); 
             input.value = "";
+            console.log(todoitems)
         }
     });
 
