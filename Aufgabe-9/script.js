@@ -27,22 +27,19 @@ window.addEventListener("load", function () {
     function todolist() {
         todobox.innerHTML = "";
         for (var index = 0; index < todoitems.length; index++) {
-            todobox.innerHTML += "<div id='box'>" + "<input type='checkbox' id='checkbox'>" + todoitems[index] + "<i class='fas fa-trash-alt'></i>" + "</div>";
-            // Totale Anzahl der Todos mit Array Länge//   
-            var total = document.querySelector("#total");
-            total.innerHTML = todoitems.length;
-            // Bei click auf Tonne soll das ToDo aus dem Array und dem Dom gelöscht werden// // löschen funktioniert jetzt aber nach dem löschen wird die anzahl nicht erneuert?//          
-            var close = document.getElementsByClassName("fas fa-trash-alt");
-            var i;
-            for (i = 0; i < close.length; i++) {
-                close[i].onclick = function () {
-                    var div = this.parentElement;
-                    div.style.display = "none";
-                    count--;
-                    document.getElementById("#total").innerHTML = String(count);
-                };
-            }
+            var todoContainer = document.createElement("div");
+            todoContainer.classList.add("todo");
+            todoContainer.innerHTML += "<p>" + "<label class='container'><input type='checkbox'><span class='checkmark'></span></label>" + "<span class='todotask'>" + todoitems[index] + "</span>" + "<i class = 'far fa-trash-alt' ></i>" + "</p>";
+            todoContainer.querySelector(".fa-trash-alt").addEventListener("click", function () {
+                console.log("delete"); //wird angezeigt//
+                todoitems.splice(index);
+                todolist();
+            });
+            todobox.appendChild(todoContainer);
         }
+        // Totale Anzahl der Todos mit Array Länge//   
+        var total = document.querySelector("#total");
+        total.innerHTML = todoitems.length;
     }
 });
 //Mit Hannah und Moritz im Praktikum und ganz viel Prof.Google//
