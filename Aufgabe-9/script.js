@@ -30,17 +30,24 @@ window.addEventListener("load", function () {
             var todoContainer = document.createElement("div");
             todoContainer.classList.add("todo");
             todoContainer.innerHTML += "<p>" + "<label class='container'><input type='checkbox'><span class='checkmark'></span></label>" + "<span class='todotask'>" + todoitems[index] + "</span>" + "<i class = 'far fa-trash-alt' ></i>" + "</p>";
-            todoContainer.querySelector(".fa-trash-alt").addEventListener("click", function () {
-                console.log("delete"); //wird angezeigt//
-                todoitems.splice(index);
-                todolist();
-            });
-            todobox.appendChild(todoContainer);
         }
-        // Totale Anzahl der Todos mit Array Länge//   
-        var total = document.querySelector("#total");
-        total.innerHTML = todoitems.length;
     }
 });
+/*   todoContainer.querySelector(".fa-trash-alt").addEventListener("click", function(): void {
+       console.log("delete"); //wird angezeigt//
+       todoitems.splice(index);
+       todolist();
+
+});
+
+   todobox.appendChild(todoContainer);
+}*/
+function deleteitem(index) {
+    todoitems.splice(index, 1);
+    todolist();
+}
+// Totale Anzahl der Todos mit Array Länge//   
+var total = document.querySelector("#total");
+total.innerHTML = todoitems.length;
 //Mit Hannah und Moritz im Praktikum und ganz viel Prof.Google//
 //# sourceMappingURL=script.js.map

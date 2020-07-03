@@ -42,8 +42,8 @@ window.addEventListener("load", function () {
             var todoContainer: HTMLElement = document.createElement("div");
             todoContainer.classList.add("todo");
             todoContainer.innerHTML +=  "<p>" + "<label class='container'><input type='checkbox'><span class='checkmark'></span></label>" + "<span class='todotask'>" + todoitems[index] + "</span>" + "<i class = 'far fa-trash-alt' ></i>" + "</p>";
-
-            todoContainer.querySelector(".fa-trash-alt").addEventListener("click", function(): void {
+        });
+         /*   todoContainer.querySelector(".fa-trash-alt").addEventListener("click", function(): void {
                 console.log("delete"); //wird angezeigt//
                 todoitems.splice(index);
                 todolist();
@@ -51,13 +51,23 @@ window.addEventListener("load", function () {
         });
 
             todobox.appendChild(todoContainer);
-    }
+    }*/
+
+function deleteitem (index: number): void {
     
+    todoitems.splice(index, 1);
+    todolist ();
+
+}
+
+
+
+
             // Totale Anzahl der Todos mit Array Länge//   
-        var total: HTMLElement = document.querySelector("#total");
-        total.innerHTML = todoitems.length;
+var total: HTMLElement = document.querySelector("#total");
+total.innerHTML = todoitems.length;
             
-});
+})
 
 
 
