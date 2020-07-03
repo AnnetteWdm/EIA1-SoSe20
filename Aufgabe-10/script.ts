@@ -46,7 +46,8 @@ var inputDOMElement: HTMLInputElement;
 var addButtonDOMElement: HTMLElement;
 var todosDOMElement: HTMLElement;
 var counterDOMElement: HTMLElement;
-
+var  counterdoneDOMElement: HTMLElement;
+var counteropenDOMElement: HTMLElement;
 /**
  * Sobald der DOM geladen wurde können grundlegende DOM-Interaktionen
  * initialisiert werden
@@ -62,8 +63,8 @@ window.addEventListener("load", function(): void {
     addButtonDOMElement = document.querySelector("#addButton");
     todosDOMElement = document.querySelector("#todos");
     counterDOMElement = document.querySelector("#counter");
-    counterDOMElement = document.querySelector("counteropen");
-    counterDOMElement = document.querySelector("counterdone");
+    counteropenDOMElement = document.querySelector("#counteropen");
+    counterdoneDOMElement = document.querySelector("#done");
 
     /**
      * Jetzt da der DOM verfügbar ist kann auch ein Event-Listener
@@ -126,10 +127,21 @@ function drawListToDOM(): void {
 }
 
 function updateCounter(): void {
+    let i: number = 0; 
+    let checkmark: number = 0;
+    while (i < todoObjects.length) { 
+    if (todoObjects[i].todosChecked == true) {
+        checkmark++;
+        }
+    i++;
+    }
+    counterdoneDOMElement.innerHTML = checkmark + " done"; // alle mit todosChecked = true
+
     counterDOMElement.innerHTML = todoObjects.length + " in total";
-    counterDOMElement.innerHTML = todosChecked  + " open ";
-    counterDOMElement.innerHTML = todoObjects.todosChecked.length + " done ";
+
+    counteropenDOMElement.innerHTML = todoObjects.length - checkmark + " need to be done"; //alle mit todosChecked = false
 }
+
 
 /**
  * Ein neues ToDo wird folgendermaßen erstellt:
