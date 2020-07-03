@@ -15,6 +15,14 @@ main {
     color: rgba(255, 255, 255, 0.76);
 }
 
+#counteropen{
+    color: rgba(255, 255, 255, 0.76); 
+}
+
+#done{
+    color: rgba(255, 255, 255, 0.76);
+}
+
 .inputGroup {
     position: relative;
 }
