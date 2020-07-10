@@ -243,10 +243,10 @@ window.addEventListener("load", function(): void {
             console.log("Neue Aufgabe wird erstellt: " + wildcard);
            
             todoObjects.unshift({ //Mit unshift wird Array am Anfang eingefügt//
-                todosText: wildcard,
+                todosText: (wildcard),
                 todosChecked: false
                 });
-            
+            drawListToDOM(); //Yuhuuuu es funktioniert
         }
 
     });
