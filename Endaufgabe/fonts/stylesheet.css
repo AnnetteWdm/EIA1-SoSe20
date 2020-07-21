@@ -1,0 +1,243 @@
+@font-face {
+    font-family: 'Force Majeure Laser';
+    src: url('ForceMajeureLaserItalic.woff2') format('woff2'),
+        url('ForceMajeureLaserItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Halftone';
+    src: url('ForceMajeureHalftoneItalic.woff2') format('woff2'),
+        url('ForceMajeureHalftoneItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Engraved';
+    src: url('ForceMajeureEngraved.woff2') format('woff2'),
+        url('ForceMajeureEngraved.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Expanded';
+    src: url('ForceMajeureExpandedItalic.woff2') format('woff2'),
+        url('ForceMajeureExpandedItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure 3D';
+    src: url('ForceMajeure3DItalic.woff2') format('woff2'),
+        url('ForceMajeure3DItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Laser';
+    src: url('ForceMajeureLaser.woff2') format('woff2'),
+        url('ForceMajeureLaser.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Leftalic';
+    src: url('ForceMajeureLeftalic.woff2') format('woff2'),
+        url('ForceMajeureLeftalic.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure 3D';
+    src: url('ForceMajeure3D.woff2') format('woff2'),
+        url('ForceMajeure3D.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Punch';
+    src: url('ForceMajeurePunch.woff2') format('woff2'),
+        url('ForceMajeurePunch.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Gradient';
+    src: url('ForceMajeureGradient.woff2') format('woff2'),
+        url('ForceMajeureGradient.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Title';
+    src: url('ForceMajeureTitleItalic.woff2') format('woff2'),
+        url('ForceMajeureTitleItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Bevel';
+    src: url('ForceMajeureBevelItalic.woff2') format('woff2'),
+        url('ForceMajeureBevelItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Condensed';
+    src: url('ForceMajeureCondensed.woff2') format('woff2'),
+        url('ForceMajeureCondensed.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Semi';
+    src: url('ForceMajeureSemi-Italic.woff2') format('woff2'),
+        url('ForceMajeureSemi-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure';
+    src: url('ForceMajeureItalic.woff2') format('woff2'),
+        url('ForceMajeureItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Title';
+    src: url('ForceMajeureTitle.woff2') format('woff2'),
+        url('ForceMajeureTitle.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Bevel';
+    src: url('ForceMajeureBevel.woff2') format('woff2'),
+        url('ForceMajeureBevel.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure';
+    src: url('ForceMajeure.woff2') format('woff2'),
+        url('ForceMajeure.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Condensed';
+    src: url('ForceMajeureCondensedItalic.woff2') format('woff2'),
+        url('ForceMajeureCondensedItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Halftone';
+    src: url('ForceMajeureHalftone.woff2') format('woff2'),
+        url('ForceMajeureHalftone.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Chrome';
+    src: url('ForceMajeureChrome.woff2') format('woff2'),
+        url('ForceMajeureChrome.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Expanded';
+    src: url('ForceMajeureExpanded.woff2') format('woff2'),
+        url('ForceMajeureExpanded.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Gradient';
+    src: url('ForceMajeureGradientItalic.woff2') format('woff2'),
+        url('ForceMajeureGradientItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Chrome';
+    src: url('ForceMajeureChromeItalic.woff2') format('woff2'),
+        url('ForceMajeureChromeItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Super';
+    src: url('ForceMajeureSuper-Italic.woff2') format('woff2'),
+        url('ForceMajeureSuper-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Engraved';
+    src: url('ForceMajeureEngravedItalic.woff2') format('woff2'),
+        url('ForceMajeureEngravedItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Force Majeure Punch';
+    src: url('ForceMajeurePunchItalic.woff2') format('woff2'),
+        url('ForceMajeurePunchItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
