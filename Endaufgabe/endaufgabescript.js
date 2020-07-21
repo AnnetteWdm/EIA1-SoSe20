@@ -8,11 +8,10 @@ let turn; // Gibt an in welcher Runde sich der Spieler befindet
 let good; // Gibt an ob der Nutzter fehler macht (false) oder nicht (true)
 let compTurn; // Gibt an ob der Computer an der Reihe ist die Reihenfolge vor zu spielen oder nicht
 let intervalId;
-//let strict = false;//
 let noise = true;
 let on = false; // Gibt an ob das Spiel an ist. Der Spieler soll nur klicken können wenn on true ist.
 let win; // Gibt an ob der Spieler das Spiel gewonnen hat oder nicht
-let buttonsounds = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "sounds/winningsound.mp3"];
+let buttonsounds = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "sounds/winningsound.mp3", "sounds/failsound.mp3"];
 //BUTTONS SELEKTIEREN//
 // Für den Counter//
 const turnCounter = document.querySelector("#turn");
@@ -284,21 +283,7 @@ function check() {
         winGame(); //Spiel gewonnen für Level easy
     }
     if (good == false) { // Wenn der Spieler einen Fehler macht
-        flashColor(); //leuchten die Buttons auf
-        turnCounter.innerHTML = "LOST"; // eine verlierer Nachricht leuchtet auf 
-        setTimeout(() => {
-            clearColor();
-            if (strict) {
-                play();
-            }
-            else {
-                compTurn = true;
-                flash = 0;
-                playerOrder = [];
-                good = true;
-                intervalId = setInterval(gameTurn, 800);
-            }
-        }, 800);
+        looseGame();
         noise = false;
     }
     if (turn == playerOrder.length && good && !win) {
@@ -320,5 +305,15 @@ function winGame() {
     //sound noch einfügen//
     on = false; //Spiel schaltet sich aus, der Spieler kann also keine Knöpfe mehr drücken
     win = true; // Spiel gewonnen
+}
+function looseGame() {
+    flashColor(); //leuchten die Buttons auf
+    let sound = new Audio(buttonsounds[6]); //WinnerSound wird abgespielt
+    sound.play();
+    instructions.innerHTML = "SORRY, YOU LOST!";
+    turnCounter.innerHTML = "FAIL!"; // eine verlierer Nachricht leuchtet auf 
+    setTimeout(() => {
+        clearColor();
+    }, 800);
 }
 //# sourceMappingURL=endaufgabescript.js.map

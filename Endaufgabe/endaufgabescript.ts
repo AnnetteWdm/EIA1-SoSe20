@@ -11,11 +11,10 @@ let turn: number; // Gibt an in welcher Runde sich der Spieler befindet
 let good: boolean; // Gibt an ob der Nutzter fehler macht (false) oder nicht (true)
 let compTurn: boolean; // Gibt an ob der Computer an der Reihe ist die Reihenfolge vor zu spielen oder nicht
 let intervalId: number;
-//let strict = false;//
 let noise: boolean = true;
 let on: boolean = false; // Gibt an ob das Spiel an ist. Der Spieler soll nur klicken können wenn on true ist.
 let win: boolean; // Gibt an ob der Spieler das Spiel gewonnen hat oder nicht
-let buttonsounds: string[] = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "sounds/winningsound.mp3"];
+let buttonsounds: string[] = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "sounds/winningsound.mp3", "sounds/failsound.mp3"];
 
 //BUTTONS SELEKTIEREN//
 
@@ -334,6 +333,7 @@ innerCircle.addEventListener("click", () => {
 
 // VERGLEICH VON COMPUTEREINGABE UND NUTZEREINGABE//
 
+
 function check(): void {
   if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1])
     good = false;
@@ -343,22 +343,7 @@ function check(): void {
   }
 
   if (good == false) { // Wenn der Spieler einen Fehler macht
-    flashColor(); //leuchten die Buttons auf
-    turnCounter.innerHTML = "LOST"; // eine verlierer Nachricht leuchtet auf 
-    setTimeout(() => { 
-      clearColor();
-
-      if (strict) {
-        play();
-      } else {
-        compTurn = true;
-        flash = 0;
-        playerOrder = [];
-        good = true;
-        intervalId = setInterval(gameTurn, 800);
-      }
-    },         800);
-
+    looseGame();
     noise = false;
   }
 
@@ -379,10 +364,21 @@ function winGame(): void {
   flashColor(); //Alle Buttons leuchten auf
   let sound: HTMLAudioElement = new Audio(buttonsounds[5]); //WinnerSound wird abgespielt
   sound.play();
-  instructions.innerHTML = "CONGRATS, YOU WON!" //Feierliche Nachricht wird angezeigt //Zeit und schwierigkeitsgrad hinzufügen
+  instructions.innerHTML = "CONGRATS, YOU WON!"; //Feierliche Nachricht wird angezeigt //Zeit und schwierigkeitsgrad hinzufügen
   turnCounter.innerHTML = "WIN!"; // es wird eine Gewinner nachricht angezeigt
   //sound noch einfügen//
   on = false; //Spiel schaltet sich aus, der Spieler kann also keine Knöpfe mehr drücken
   win = true; // Spiel gewonnen
 }
 
+function looseGame(): void {
+  flashColor(); //leuchten die Buttons auf
+  let sound: HTMLAudioElement = new Audio(buttonsounds[6]); //WinnerSound wird abgespielt
+  sound.play();
+  instructions.innerHTML = "SORRY, YOU LOST!";
+  turnCounter.innerHTML = "FAIL!"; // eine verlierer Nachricht leuchtet auf 
+  setTimeout(() => { 
+      clearColor();
+    },       800);
+
+}
