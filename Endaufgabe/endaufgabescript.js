@@ -1,5 +1,5 @@
 // Endaufgabe SoSe 2020, Annette Wiedenmann, 265117//
-// Ansatz aufgrund von Zeitmangel geklaut von https://github.com/beaucarnes/simon-game/blob/master/js/index.js und selbst angepasst //
+// Ansatz aufgrund von Zeitmangel stark inspiriert von https://github.com/beaucarnes/simon-game/blob/master/js/index.js  //
 //VARIABLEN WERDEN DEKLARIERT//
 let order = []; //Array in der die vom Computer generierte Reihenfolge der aufleuchtendet Buttons gespeichert werden
 let playerOrder = []; //Array in der die vom Spieler eingegebene Reihenfolge gespeichert wird
@@ -12,10 +12,11 @@ let intervalId;
 let noise = true;
 let on = false; // Gibt an ob das Spiel an ist. Der Spieler soll nur klicken können wenn on true ist.
 let win; // Gibt an ob der Spieler das Spiel gewonnen hat oder nicht
-let buttonsounds = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3"];
+let buttonsounds = ["Sounds/A.mp3", "Sounds/C.mp3", "Sounds/F.mp3", "Sounds/G.mp3", "Sounds/hihat.mp3", "sounds/winningsound.mp3"];
 //BUTTONS SELEKTIEREN//
-// Für den TurnCounter//
+// Für den Counter//
 const turnCounter = document.querySelector("#turn");
+const instructions = document.querySelector("#instruction");
 //Füt die Buttons//
 const topLeft = document.querySelector("#topleft");
 const topRight = document.querySelector("#topright");
@@ -312,8 +313,9 @@ function check() {
 // FUNKTION FÜR GEWINNEN DES SPIELS//
 function winGame() {
     flashColor(); //Alle Buttons leuchten auf
-    let sound = new Audio(buttonsounds[]); //Sound wird abgespielt
+    let sound = new Audio(buttonsounds[5]); //WinnerSound wird abgespielt
     sound.play();
+    instructions.innerHTML = "CONGRATS, YOU WON!"; //Feierliche Nachricht wird angezeigt //Zeit und schwierigkeitsgrad hinzufügen
     turnCounter.innerHTML = "WIN!"; // es wird eine Gewinner nachricht angezeigt
     //sound noch einfügen//
     on = false; //Spiel schaltet sich aus, der Spieler kann also keine Knöpfe mehr drücken
