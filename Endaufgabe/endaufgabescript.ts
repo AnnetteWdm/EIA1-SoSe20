@@ -1,5 +1,5 @@
 // Endaufgabe SoSe 2020, Annette Wiedenmann, 265117//
-// mit Hilfe von https://github.com/beaucarnes/simon-game/blob/master/js/index.js  //
+
 
 
 //VARIABLEN WERDEN DEKLARIERT//
@@ -435,3 +435,25 @@ function looseGame(): void {
 reloadbutton.addEventListener("click", function(): void {
   window.location.reload(); // nachgeschaut bei https://stackoverflow.com/questions/43985752/how-to-reload-page-the-whole-page-in-angular-2//
 }); 
+
+
+// PROGRESSBAR//
+
+class Progress {
+  private p: number;
+  private bar = document.querySelectorAll("#prog-bar > .progress-bar")[0];
+
+  constructor (p: number) {
+    this.p = p;
+   this.update();
+  }
+  private update() {
+    this.bar.style.width = this.p + "%";
+  }  
+  countup() {
+    if (this.p < 100) { this.p += 10; }
+   this.update();
+  }
+
+var p = new Progress(0);
+
