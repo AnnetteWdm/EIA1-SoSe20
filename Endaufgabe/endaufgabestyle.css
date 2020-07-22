@@ -8,8 +8,8 @@ h1{
     color: rgb(255, 255, 255);
     font-style: italic;
     text-align: center;
-    font-size: 100px;
-    margin-bottom: 20px;
+    font-size: 90px;
+    margin-bottom: 18px;
 }
 
 footer{
@@ -32,8 +32,12 @@ button{
     width: 80px;
     border-color: rgb(37, 1, 85);
     border-radius: 10px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     
+}
+
+button:hover{
+    opacity: 70%;
 }
 
 #difficultyeasy{
@@ -52,6 +56,22 @@ button{
 
 #difficultyextreme{
     background-color: rgb(255, 146, 246);
+}
+
+.fa-redo {
+    align-items: center;
+    font-size: 35px;
+    background-color: rgb(37, 1, 85);
+    color: ghostwhite;
+    margin-left: 50%;
+    width: 35px;
+    height: 35px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.fa-redo:hover{
+    opacity: 50%;
 }
 
 .text2 {
@@ -124,6 +144,9 @@ button{
     -webkit-box-sizing: border-box;
     cursor: pointer;
 }
+#topleft:hover {
+    opacity: 80%;
+}
   
 #topright {
     position: absolute;
@@ -144,7 +167,11 @@ button{
     -webkit-box-sizing: border-box;
     cursor: pointer;
  }
-  
+
+#topright:hover{
+    opacity: 80%;
+}
+
 #bottomleft {
     position: absolute;
     height: 250px;
@@ -163,6 +190,10 @@ button{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     cursor: pointer;
+}
+
+#bottomleft:hover{
+    opacity: 80%;
 }
   
 #bottomright {
@@ -184,6 +215,10 @@ button{
     -webkit-box-sizing: border-box;
     cursor: pointer;
 }
+
+#bottomright:hover{
+    opacity: 80%;
+}
   
 #inner-circle {
     position: absolute;
@@ -201,5 +236,9 @@ button{
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     cursor: pointer;
+}
+
+#inner-circle:hover{
+    border-color: rgb(255, 255, 255);
 }
   

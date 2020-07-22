@@ -1,12 +1,12 @@
 // Endaufgabe SoSe 2020, Annette Wiedenmann, 265117//
-// Ansatz aufgrund von Zeitmangel stark inspiriert von https://github.com/beaucarnes/simon-game/blob/master/js/index.js  //
+// mit Hilfe von https://github.com/beaucarnes/simon-game/blob/master/js/index.js  //
 //VARIABLEN WERDEN DEKLARIERT//
-let order = []; //Array in der die vom Computer generierte Reihenfolge der aufleuchtendet Buttons gespeichert werden
+let compOrder = []; //Array in der die vom Computer generierte Reihenfolge der aufleuchtendet Buttons gespeichert werden
 let playerOrder = []; //Array in der die vom Spieler eingegebene Reihenfolge gespeichert wird
 let flash; // Anzahl der Buttons die aufleuchten
 let turn; // Gibt an in welcher Runde sich der Spieler befindet
 let good; // Gibt an ob der Nutzter fehler macht (false) oder nicht (true)
-let compTurn; // Gibt an ob der Computer an der Reihe ist die Reihenfolge vor zu spielen oder nicht
+let compTurn; // Gibt an ob der Computer an der Reihe ist die Reihenfolge vor zu spielen oder nicht (dann ist der Nutzer dran)
 let intervalId;
 let noise = true; // Gibt an ob die Buttons einen Ton abspielen sollen oder nicht
 let on = false; // Gibt an ob das Spiel an ist. Der Spieler soll nur klicken können wenn on, true ist.
@@ -28,6 +28,7 @@ const topRight = document.querySelector("#topright");
 const bottomLeft = document.querySelector("#bottomleft");
 const bottomRight = document.querySelector("#bottomright");
 const innerCircle = document.querySelector("#inner-circle");
+const reloadbutton = document.querySelector("#reload");
 //Für die Schwierigkeitsgrad buttons
 const diffEasy = document.querySelector("#difficultyeasy");
 const diffAdvanced = document.querySelector("#difficultyadvanced");
@@ -48,7 +49,7 @@ diffEasy.addEventListener("click", function () {
 });
 function playeasy() {
     win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
-    order = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
+    compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
     playerOrder = [];
     flash = 0; // Noch kein Button hat aufgeleuchtet
     intervalId = 0;
@@ -56,9 +57,9 @@ function playeasy() {
     turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
     good = true; // der Spieler hat noch nichts falsches gedrückt
     for (i = 0; i < 5; i++) { // 5 Zahlen werden erstellt
-        order.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+        compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
     }
-    console.log(order); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
+    console.log(compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
     compTurn = true; // der Computer startet und beginnt den Ton zu spielen
     intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
 }
@@ -75,7 +76,7 @@ diffAdvanced.addEventListener("click", function () {
 });
 function playadvanced() {
     win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
-    order = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
+    compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
     playerOrder = [];
     flash = 0; // Noch kein Button hat aufgeleuchtet
     intervalId = 0;
@@ -83,9 +84,9 @@ function playadvanced() {
     turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
     good = true; // der Spieler hat noch nichts falsches gedrückt
     for (i = 0; i < 15; i++) { // 15 Zahlen werden erstellt
-        order.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+        compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
     }
-    console.log(order); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
+    console.log(compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
     compTurn = true; // der Computer startet und beginnt den Ton zu spielen
     intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
 }
@@ -102,7 +103,7 @@ diffHard.addEventListener("click", function () {
 });
 function playhard() {
     win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
-    order = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
+    compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
     playerOrder = [];
     flash = 0; // Noch kein Button hat aufgeleuchtet
     intervalId = 0;
@@ -110,9 +111,9 @@ function playhard() {
     turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
     good = true; // der Spieler hat noch nichts falsches gedrückt
     for (i = 0; i < 25; i++) { //es werden 25 Zahlen erstellt
-        order.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+        compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
     }
-    console.log(order); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
+    console.log(compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
     compTurn = true; // der Computer startet und beginnt den Ton zu spielen
     intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
 }
@@ -129,7 +130,7 @@ diffExtreme.addEventListener("click", function () {
 });
 function playextreme() {
     win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
-    order = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
+    compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
     playerOrder = [];
     flash = 0; // Noch kein Button hat aufgeleuchtet
     intervalId = 0;
@@ -137,9 +138,9 @@ function playextreme() {
     turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
     good = true; // der Spieler hat noch nichts falsches gedrückt
     for (i = 0; i < 35; i++) { //35 Zahlen werden generiert
-        order.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+        compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
     }
-    console.log(order); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
+    console.log(compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
     compTurn = true; // der Computer startet und beginnt den Ton zu spielen
     intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
 }
@@ -152,15 +153,15 @@ function gameTurn() {
     }
     if (compTurn) { // wenn der computer noch nicht fertig ist
         setTimeout(function () {
-            if (order[flash] == 1)
+            if (compOrder[flash] == 1)
                 topleftbutton(); //Wenn die erste Stelle im Array eins entspricht, wird funktion one ausgeführt
-            if (order[flash] == 2)
+            if (compOrder[flash] == 2)
                 toprightbutton(); // Wenn die erste Stelle im Array zwei entspricht,...usw
-            if (order[flash] == 3)
+            if (compOrder[flash] == 3)
                 bottomleftbutton();
-            if (order[flash] == 4)
+            if (compOrder[flash] == 4)
                 bottomrightbutton();
-            if (order[flash] == 5)
+            if (compOrder[flash] == 5)
                 innerbutton();
             flash++; // dann wird die zewite Stelle im Array verglichen usw.
         }, 200); //Dies passiert nach 200ms
@@ -302,7 +303,7 @@ innerCircle.addEventListener("click", function () {
 });
 // VERGLEICH VON COMPUTEREINGABE UND NUTZEREINGABE//
 function check() {
-    if (playerOrder[playerOrder.length - 1] !== order[playerOrder.length - 1]) // hier vergleicht der Computer das Array mit der Reihenfolge des Computers mit dem Array mit der Spielereingabe
+    if (playerOrder[playerOrder.length - 1] !== compOrder[playerOrder.length - 1]) // hier vergleicht der Computer das Array mit der Reihenfolge des Computers mit dem Array mit der Spielereingabe
         good = false; // wenn sie nicht übereinstimmen ist das boolean falsch
     if (playerOrder.length == 5 && good && easychosen) { // wenn nach 5 runden vom Nutzer alles richtig gedrückt wurde und easy gewählt wurde, dann ist das Spiel gewonnen; genauso für die anderen Levels
         winGame(); //Spiel gewonnen für Level easy
@@ -352,4 +353,8 @@ function looseGame() {
     on = false;
     win = false;
 }
+// RELOADBUTTON//
+reloadbutton.addEventListener("click", function () {
+    window.location.reload(); // nachgeschaut bei https://stackoverflow.com/questions/43985752/how-to-reload-page-the-whole-page-in-angular-2//
+});
 //# sourceMappingURL=endaufgabescript.js.map
