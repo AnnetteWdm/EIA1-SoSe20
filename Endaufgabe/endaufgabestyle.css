@@ -24,6 +24,13 @@ footer{
     color: seashell;
 
 }
+
+a{
+    font-size: 10px;
+    font-family: monospace;
+    color: seashell;
+}
+
 button{
     cursor: pointer;
     text-align: center;

@@ -1,5 +1,4 @@
 // Endaufgabe SoSe 2020, Annette Wiedenmann, 265117//
-// mit Hilfe von https://github.com/beaucarnes/simon-game/blob/master/js/index.js  //
 //VARIABLEN WERDEN DEKLARIERT//
 let compOrder = []; //Array in der die vom Computer generierte Reihenfolge der aufleuchtendet Buttons gespeichert werden
 let playerOrder = []; //Array in der die vom Spieler eingegebene Reihenfolge gespeichert wird
