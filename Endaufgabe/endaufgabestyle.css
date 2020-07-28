@@ -270,7 +270,7 @@ button:hover{
 .progress-bar {
     transition: width 0.5s linear;
     height: 100%;
-    width: 12%;
+    width: 1%;
     background-color: rgb(255, 146, 246);
     border-radius: 4px;
 }

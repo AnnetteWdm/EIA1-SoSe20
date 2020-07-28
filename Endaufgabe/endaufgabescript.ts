@@ -1,4 +1,5 @@
-// Endaufgabe SoSe 2020, Annette Wiedenmann, 265117//
+// Endaufgabe SoSe 2020, Annette Wiedenmann, 265117//// mit Hilfe von https://github.com/beaucarnes/simon-game/blob/master/js/index.js  //
+
 
 
 
@@ -36,6 +37,7 @@ const bottomRight: HTMLElement = document.querySelector("#bottomright");
 const innerCircle: HTMLElement = document.querySelector("#inner-circle");
 
 const reloadbutton: HTMLElement = document.querySelector("#reload"); 
+const progressbar: HTMLElement = document.querySelector(".progress-bar");
 
 //Für die Schwierigkeitsgrad buttons
 const diffEasy: HTMLElement = document.querySelector("#difficultyeasy");
@@ -399,6 +401,22 @@ function check(): void {
     flash = 0;
     turnCounter.innerHTML = turn;
     intervalId = setInterval(gameTurn, 800);
+  
+    //Progressbar. So ist es umstädlich :( aber funktioniert. Besser mit Schleife?
+    if (turn == 2 && easychosen) {
+      progressbar.style.width = "20%";
+    }
+    if (turn == 3 && easychosen) {
+      progressbar.style.width = "40%";
+    }
+    if (turn == 4 && easychosen) {
+      progressbar.style.width = "60%";
+    }
+    if (turn == 5 && easychosen) {
+      progressbar.style.width = "80%";
+    }
+    
+  
   }
 
 }
@@ -406,6 +424,7 @@ function check(): void {
 // FUNKTION FÜR GEWINNEN DES SPIELS//
 
 function winGame(): void {
+  progressbar.style.width = "100%";
   flashColor(); //Alle Buttons leuchten auf
   let sound: HTMLAudioElement = new Audio(buttonsounds[5]); //WinnerSound wird abgespielt
   sound.play();
