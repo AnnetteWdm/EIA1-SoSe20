@@ -190,11 +190,13 @@ function gameTurn(): void {
   if (flash == turn) { //Wenn ide Anzahl der gespielten töne mit der Runde übereinstimmt. Ist der Computer fertig und der Spieler ist an der reihe 
     clearInterval(intervalId); // Abspielen der Samples stoppt
     compTurn = false; // der computer ist nichtmehr an der reihe
+    instructions.innerHTML = "REPEAT THE SOUNDS!";
     on = true; //jetzt kann der spieler drücken
   }
 
   if (compTurn) { // wenn der computer noch nicht fertig ist
     
+    instructions.innerHTML = "WATCH AND LISTEN CAREFULLY!";
     setTimeout( function(): void { //
       if (compOrder[flash] == 1) topleftbutton();  //Wenn die erste Stelle im Array eins entspricht, wird funktion one ausgeführt
       if (compOrder[flash] == 2) toprightbutton(); // Wenn die erste Stelle im Array zwei entspricht,...usw
@@ -439,21 +441,21 @@ reloadbutton.addEventListener("click", function(): void {
 
 // PROGRESSBAR//
 
-class Progress {
+/*class Progress {
   private p: number;
   private bar = document.querySelectorAll("#prog-bar > .progress-bar")[0];
 
   constructor (p: number) {
     this.p = p;
-   this.update();
+    this.update();
   }
   private update() {
     this.bar.style.width = this.p + "%";
   }  
   countup() {
     if (this.p < 100) { this.p += 10; }
-   this.update();
+    this.update();
   }
 
-var p = new Progress(0);
+var p = new Progress(0); */
 

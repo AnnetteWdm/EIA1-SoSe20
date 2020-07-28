@@ -148,9 +148,11 @@ function gameTurn() {
     if (flash == turn) { //Wenn ide Anzahl der gespielten töne mit der Runde übereinstimmt. Ist der Computer fertig und der Spieler ist an der reihe 
         clearInterval(intervalId); // Abspielen der Samples stoppt
         compTurn = false; // der computer ist nichtmehr an der reihe
+        instructions.innerHTML = "REPEAT THE SOUNDS!";
         on = true; //jetzt kann der spieler drücken
     }
     if (compTurn) { // wenn der computer noch nicht fertig ist
+        instructions.innerHTML = "WATCH AND LISTEN CAREFULLY!";
         setTimeout(function () {
             if (compOrder[flash] == 1)
                 topleftbutton(); //Wenn die erste Stelle im Array eins entspricht, wird funktion one ausgeführt
@@ -357,21 +359,21 @@ reloadbutton.addEventListener("click", function () {
     window.location.reload(); // nachgeschaut bei https://stackoverflow.com/questions/43985752/how-to-reload-page-the-whole-page-in-angular-2//
 });
 // PROGRESSBAR//
-class Progress {
-    constructor(p) {
-        this.bar = document.querySelectorAll("#prog-bar > .progress-bar")[0];
-        this.p = p;
-        this.update();
-    }
-    update() {
-        this.bar.style.width = this.p + "%";
-    }
-    countup() {
-        if (this.p < 100) {
-            this.p += 10;
-        }
-        this.update();
-    }
-}
-var p = new Progress(0);
+/*class Progress {
+  private p: number;
+  private bar = document.querySelectorAll("#prog-bar > .progress-bar")[0];
+
+  constructor (p: number) {
+    this.p = p;
+    this.update();
+  }
+  private update() {
+    this.bar.style.width = this.p + "%";
+  }
+  countup() {
+    if (this.p < 100) { this.p += 10; }
+    this.update();
+  }
+
+var p = new Progress(0); */
 //# sourceMappingURL=endaufgabescript.js.map
