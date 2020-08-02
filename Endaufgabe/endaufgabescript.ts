@@ -1,17 +1,15 @@
 // Endaufgabe SoSe 2020, Annette Wiedenmann, 265117//// mit Hilfe von https://github.com/beaucarnes/simon-game/blob/master/js/index.js  //
 
 
-
-
 //VARIABLEN WERDEN DEKLARIERT//
 
-let compOrder: number[] = []; //Array in der die vom Computer generierte Reihenfolge der aufleuchtendet Buttons gespeichert werden
+let compOrder: number[] = []; //Array in der die, vom Computer generierte Reihenfolge der aufleuchtenden Buttons, gespeichert werden
 let playerOrder: number[] = []; //Array in der die vom Spieler eingegebene Reihenfolge gespeichert wird
 let flash: number; // Anzahl der Buttons die aufleuchten
 let turn: number; // Gibt an in welcher Runde sich der Spieler befindet
 let good: boolean; // Gibt an ob der Nutzter fehler macht (false) oder nicht (true)
 let compTurn: boolean; // Gibt an ob der Computer an der Reihe ist die Reihenfolge vor zu spielen oder nicht (dann ist der Nutzer dran)
-let intervalId: number;
+let intervalId: number; // Für den Intervall, in dem die Buttons aufleuchten
 let noise: boolean = true; // Gibt an ob die Buttons einen Ton abspielen sollen oder nicht
 let on: boolean = false; // Gibt an ob das Spiel an ist. Der Spieler soll nur klicken können wenn on, true ist.
 let win: boolean; // Gibt an ob der Spieler das Spiel gewonnen hat oder nicht
@@ -25,10 +23,16 @@ let hardchosen: boolean;
 let extremechosen: boolean;
 
 //BUTTONS SELEKTIEREN//
+/*
+Die Anwendung muss immer wieder auf die selben DOM-Elemente zugreifen. Damit diese Elemente nicht 
+jedes mal neu selektiert werden müssen, werden hier Variablen deklariert, die die entsprechenden DOM-Elemente speichern.
+Es werden Konstanten verwendet, da der Wert der Variablen immer gleich ist
+*/
 
-// Für den Counter//
+// Für den Counter und Instructions//
 const turnCounter: HTMLElement = document.querySelector("#turn");
 const instructions: Element = document.querySelector("#instruction");
+
 //Füt die Buttons//
 const topLeft: HTMLElement = document.querySelector("#topleft");
 const topRight: HTMLElement = document.querySelector("#topright");
@@ -48,48 +52,48 @@ const diffExtreme: HTMLElement = document.querySelector("#difficultyextreme");
 
 //FUNKTIONEN FÜR DEN JEW. SCHWIERIGKEITSGRAD//
 
-var i: number;
+var i: number; // Zählervariable für die Schleife (wird global deklariert, damit für jeden Schwierigkeitsgrad darauf zugegriffen werden kann//
 
 // EASY//
 
-diffEasy.addEventListener("click", function (): void { // Wenn der Button mit Schwierigkeit easy geklickt wird,startet das Spiel
-    console.log ("buttonEASYclicked"); //Konsolenausgabe zur kontrolle
-    diffEasy.style.boxShadow = "3px 3px 15px 3px white"; //gewählte Schwierigkeit wird durch einen boxschatten markiert
+diffEasy.addEventListener("click", function (): void { // Wenn der Button mit Schwierigkeit easy geklickt wird, startet das Spiel
+    console.log ("buttonEASYclicked"); //Konsolenausgabe zur Kontrolle ob der Button reagiert
+    diffEasy.style.boxShadow = "3px 3px 15px 3px white"; //gewählte Schwierigkeit wird durch einen Boxschatten markiert
     on = true; // Das Spiel läuft
-    easychosen = true;
-    advancedchosen = false;
+    easychosen = true; //es wurde Schwierigkeit easy gewählt
+    advancedchosen = false; //Die anderen Schwierigkeiten wurden nicht gewählt, sind also false
     hardchosen = false;
     extremechosen = false;
-    playeasy();
+    playeasy(); //Funktion playeasy wird aufgerufen
 
   }
 );
 
-function playeasy(): void {
-  win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
+function playeasy(): void { // Funktion für den Schwierigkeitsgrad easy://
+  win = false; // Alle variablen werden erstmal zurückgesetzt, falls von vorherigen Runden noch die Reihenfolge gespeichert ist
   compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
-  playerOrder = [];
-  flash = 0; // Noch kein Button hat aufgeleuchtet
-  intervalId = 0;
+  playerOrder = []; // Array mit der Nutzereigabe soll auch leer sein
+  flash = 0; // Noch kein Button haben aufgeleuchtet
+  intervalId = 0; // Das Interval wird auf 0 gesetzt
   turn = 1; //Erste Runde
   turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
   good = true; // der Spieler hat noch nichts falsches gedrückt
 
-  for ( i = 0; i < 5; i++) { // 5 Zahlen werden erstellt
-    compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+  for ( i = 0; i < 5; i++) { // Willkütliche Zahlenreihenfolge von 5 Zahlen wird erstellt mit dieser Schleife
+    compOrder.push(Math.floor(Math.random() * 5) + 1); // Diese Methode erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese dann in das Array für die Computerreihenfolge. Das passiert durch die Schleife 5 Mal//
   }
-  console.log (compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
-  compTurn = true; // der Computer startet und beginnt den Ton zu spielen
+  console.log (compOrder); // Kontrolle über Konsolenausgabe
+  compTurn = true; // der Computer startet und beginnt, durch Aufruf der Funktion gameTurn (in der folgenden Zeile), den ersten Ton zu spielen
 
-  intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
+  intervalId = setInterval(gameTurn, 800); //die Funktion gameturn wird alle 800millisekunden aufgerufen. Der Computer lässt also alle 800ms ein Button aufleuchten bis das Intervall geleert wurde mit clearInterval (siehe bei funktion gameTurn)
 }
 
 //ADVANCED//
 
-diffAdvanced.addEventListener("click", function (): void { // Wenn der Button mit Schwierigkeit easy geklickt wird,startet das Spiel
-  console.log ("buttonAdvancedclicked"); //funktioniert
+diffAdvanced.addEventListener("click", function (): void { // Wenn der Button mit Schwierigkeit advanced geklickt wird,startet das Spiel // Ablauf genauso wie oben
+  console.log ("buttonAdvancedclicked"); 
   diffAdvanced.style.boxShadow = "3px 3px 15px 3px white";
-  on = true; // Das Spiel ist am laufen
+  on = true; 
   easychosen = false;
   advancedchosen = true;
   hardchosen = false;
@@ -99,30 +103,30 @@ diffAdvanced.addEventListener("click", function (): void { // Wenn der Button mi
 });
 
 function playadvanced(): void {
-win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
-compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
+win = false;
+compOrder = [];
 playerOrder = [];
-flash = 0; // Noch kein Button hat aufgeleuchtet
+flash = 0; 
 intervalId = 0;
-turn = 1; //Erste Runde
-turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
-good = true; // der Spieler hat noch nichts falsches gedrückt
+turn = 1; 
+turnCounter.innerHTML = "1"; 
+good = true; 
 
-for (  i = 0; i < 15; i++) { // 15 Zahlen werden erstellt
-  compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+for (  i = 0; i < 15; i++) { // Hier wird eine Reihenfolge von 15 Zahlen erstellt
+  compOrder.push(Math.floor(Math.random() * 5) + 1); 
 }
-console.log (compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
-compTurn = true; // der Computer startet und beginnt den Ton zu spielen
+console.log (compOrder); 
+compTurn = true; 
 
-intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
+intervalId = setInterval(gameTurn, 800); 
 }
 
 //HARD//
 
-diffHard.addEventListener("click", function (): void { // Wenn der Button mit Schwierigkeit easy geklickt wird,startet das Spiel
-  console.log ("buttonHardclicked"); //funktioniert
+diffHard.addEventListener("click", function (): void { // Erklärung wie oben
+  console.log ("buttonHardclicked"); 
   diffHard.style.boxShadow = "3px 3px 15px 3px white";
-  on = true; // Das Spiel ist am laufen
+  on = true; 
   easychosen = false;
   advancedchosen = false;
   hardchosen = true;
@@ -132,30 +136,30 @@ diffHard.addEventListener("click", function (): void { // Wenn der Button mit Sc
 });
 
 function playhard(): void {
-win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
-compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
+win = false;
+compOrder = []; 
 playerOrder = [];
-flash = 0; // Noch kein Button hat aufgeleuchtet
+flash = 0; 
 intervalId = 0;
-turn = 1; //Erste Runde
-turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
-good = true; // der Spieler hat noch nichts falsches gedrückt
+turn = 1; 
+turnCounter.innerHTML = "1"; 
+good = true; 
 
-for ( i = 0; i < 25; i++) { //es werden 25 Zahlen erstellt
-  compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+for ( i = 0; i < 25; i++) { 
+  compOrder.push(Math.floor(Math.random() * 5) + 1); 
 }
-console.log (compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
-compTurn = true; // der Computer startet und beginnt den Ton zu spielen
+console.log (compOrder); 
+compTurn = true; 
 
-intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
+intervalId = setInterval(gameTurn, 800); 
 }
 
 //Extreme//
 
-diffExtreme.addEventListener("click", function (): void { // Wenn der Button mit Schwierigkeit easy geklickt wird,startet das Spiel
-  console.log ("buttonExtremeclicked"); //funktioniert
+diffExtreme.addEventListener("click", function (): void { // genauso wie Oben
+  console.log ("buttonExtremeclicked"); 
   diffExtreme.style.boxShadow = "3px 3px 15px 3px white";
-  on = true; // Das Spiel ist am laufen
+  on = true; 
   easychosen = false;
   advancedchosen = false;
   hardchosen = false;
@@ -165,48 +169,53 @@ diffExtreme.addEventListener("click", function (): void { // Wenn der Button mit
 });
 
 function playextreme(): void {
-win = false; // Alle variablen werden erstmal zurückgesetzt falls von vorherigen Runden noch die Reihenfolge gespeichert ist etc.
-compOrder = []; // Array in dem die willkürliche Reihenfolge gespeichert wird ist leer
+win = false; 
+compOrder = [];
 playerOrder = [];
-flash = 0; // Noch kein Button hat aufgeleuchtet
+flash = 0; 
 intervalId = 0;
-turn = 1; //Erste Runde
-turnCounter.innerHTML = "1"; // Der counter stellt sich auf 1, da erste Runde
-good = true; // der Spieler hat noch nichts falsches gedrückt
+turn = 1;
+turnCounter.innerHTML = "1"; 
+good = true; 
 
-for ( i = 0; i < 35; i++) { //35 Zahlen werden generiert
-  compOrder.push(Math.floor(Math.random() * 5) + 1); // erstellt eine willkürliche Zahl zwischen eins und fünf und pusht diese Reihenfolge dann in das dafür vorgesehene Array
+for ( i = 0; i < 35; i++) { 
+  compOrder.push(Math.floor(Math.random() * 5) + 1); 
 }
-console.log (compOrder); // Kontrolle über Konsolenausgabe, funktioniert yeyyy
-compTurn = true; // der Computer startet und beginnt den Ton zu spielen
+console.log (compOrder);
+compTurn = true; 
 
-intervalId = setInterval(gameTurn, 800); //die Funktion wird alle 800millisekunden aufgerufen: Der computer spielt einen Ton alle 800ms
+intervalId = setInterval(gameTurn, 800);
 }
 
 
 
 
-function gameTurn(): void {
-  on = false; // der Spieler kann keine Buttons drücken
+function gameTurn(): void { 
 
-  if (flash == turn) { //Wenn ide Anzahl der gespielten töne mit der Runde übereinstimmt. Ist der Computer fertig und der Spieler ist an der reihe 
-    clearInterval(intervalId); // Abspielen der Samples stoppt
-    compTurn = false; // der computer ist nichtmehr an der reihe
-    instructions.innerHTML = "REPEAT THE SOUNDS!";
-    on = true; //jetzt kann der spieler drücken
+  on = false; // der Spieler kann zunächst keine Buttons drücken
+
+  if (flash == turn) { //Wenn die Anzahl der gespielten Töne mit der Runde übereinstimmt, dann:
+    clearInterval(intervalId); // stoppt das Interval in dem die  Buttons aufleuchten, denn in Runde eins soll ja nur der erste Ton abgespielt werden, in Runde zwei die ersten zwei Töne usw...
+    compTurn = false; // der Computer hat den Tön/ die Töne abgespielt und ist nichtmehr an der Reihe
+    instructions.innerHTML = "REPEAT THE SOUNDS!"; // Mit der Spielanweisung wird der SPieler aufgefordert die Töne nachzuahmen
+    on = true; //jetzt kann der Spieler die Buttons drücken
   }
 
-  if (compTurn) { // wenn der computer noch nicht fertig ist
+  if (compTurn) { // Wenn der Computer noch nicht fertig ist
     
-    instructions.innerHTML = "WATCH AND LISTEN CAREFULLY!";
-    setTimeout( function(): void { //
-      if (compOrder[flash] == 1) topleftbutton();  //Wenn die erste Stelle im Array eins entspricht, wird funktion one ausgeführt
-      if (compOrder[flash] == 2) toprightbutton(); // Wenn die erste Stelle im Array zwei entspricht,...usw
-      if (compOrder[flash] == 3) bottomleftbutton();
+    instructions.innerHTML = "WATCH AND LISTEN CAREFULLY!"; // dann wird der SPieler aufgefordert aufmerksam zu sein
+
+    setTimeout( function(): void { //Die Zahlen werden hier einem Button zugeordnet. Je nachdem welche Zahl im Array steht, leuchtet dann der jeweilige Button und spielt dem ihm zugeordneten Ton
+      //die Variable flash wird hier als Index benutzt um auf die jeweilige Stelle im Array zuzugreifen. flash ist am Anfang 0, also wird die erste Stelle im Array verglichen.
+      if (compOrder[flash] == 1) topleftbutton();  //Wenn die erste Stelle im Array der Computerreihenfolge eins entspricht, wird die Funktion für den oberen linken Button ausgeführt ( also wird der jew. Button aufleuchten und den Ton abspielen)
+      if (compOrder[flash] == 2) toprightbutton(); // Wenn die erste Stelle im Array zwei entspricht, wird die Funktion für den oberen rechten Button getriggert
+      if (compOrder[flash] == 3) bottomleftbutton(); // usw..//
       if (compOrder[flash] == 4) bottomrightbutton();
       if (compOrder[flash] == 5) innerbutton();
-      flash++; // dann wird die zewite Stelle im Array verglichen usw.
-    },          200); //Dies passiert nach 200ms
+
+      flash++; // dann wird die Variable erhöht damit die nächste Stelle im Array verglichen wird
+    },          200); /*Das ganze passiert nach jew. 200ms. Da die Funktion gameTurn oben alle 800ms aufgerufen wird, Leuchtet ein Button alle 800ms auf.
+                        Da wir hier die 200ms haben, leuchtet kein Button für 200ms. Nach Ende der obigen 800ms leuchtet dann wieder ein Button auf */
   }
 }
 
@@ -215,25 +224,23 @@ function gameTurn(): void {
 //FUNKTIONEN FÜR DIE BUTTONS, WENN DER COMPUTER SIE ABSPIELT ( SOUND UND LIGHTFLASH)//
 
 function topleftbutton(): void { //topleft//
-  if (noise) {
-    /*let audio:  = document.getElementById("clip1"); // Spielt den jeweiligen Sound ab
-    audio.play();*/
-    let sound: HTMLAudioElement = new Audio(buttonsounds[0]);
+  if (noise) { // Wenn der Button auch einen Ton abspielen soll dann
+    let sound: HTMLAudioElement = new Audio(buttonsounds[0]); //wird der Ton abgespielt
     sound.play();
   }
-  noise = true; //wenn der Ton gespielt wird...
-  topLeft.style.backgroundColor = "rgb(255, 204, 251)"; //...scheint das licht auf
-  setTimeout(() => {
-    clearColor();
+  topLeft.style.backgroundColor = "rgb(255, 204, 251)"; // Der Button leuchtet durch veränderung der Farbe auf, wenn der Ton abgespielt wird
+  setTimeout(() => { // Nach 300ms... //Der Pfeil ist eine Kurzschreibweise für "function(): void"
+    clearColor(); // ...wird das Aufleuchten des Buttons wieder rückgängig gemacht mit der clearColour Funktion
   },         300);
 }
+
+// genauso für alle anderen Buttons//
 
 function toprightbutton(): void { //topright//
   if (noise) {
     let sound: HTMLAudioElement = new Audio(buttonsounds[1]);
     sound.play();
   }
-  noise = true;
   topRight.style.backgroundColor = "rgb(215, 252, 255)";
   setTimeout(() => {
     clearColor();
@@ -245,7 +252,7 @@ function bottomleftbutton(): void { //bottomleft//
     let sound: HTMLAudioElement = new Audio(buttonsounds[2]);
     sound.play();
   }
-  noise = true;
+
   bottomLeft.style.backgroundColor = "rgb(186, 255, 215)";
   setTimeout(() => {
     clearColor();
@@ -257,7 +264,7 @@ function bottomrightbutton(): void { //bottomright//
     let sound: HTMLAudioElement = new Audio(buttonsounds[3]);
     sound.play(); 
   }
-  noise = true;
+
   bottomRight.style.backgroundColor = "rgb(255, 237, 198)";
   setTimeout(() => {
     clearColor();
@@ -269,16 +276,16 @@ function innerbutton(): void { //innercircle//
       let sound: HTMLAudioElement = new Audio(buttonsounds[4]);
       sound.play();
     }
-    noise = true;
+
     innerCircle.style.backgroundColor = "rgb(218, 185, 255)";
     setTimeout(() => {
       clearColor();
     },         300);
   }
 
-// Funktion wenn alle Buttons aufleuchten sollen
+// Funktion für die Farbänderung der Buttons//
 
-function flashColor(): void {
+function flashColor(): void { // Diese Funktion verändert die Farbe aller Farben gleichzeitig, lässt die Buttons also gleichzeitig aufleuchten//
 
   topLeft.style.backgroundColor = "rgb(255, 204, 251)";
   topRight.style.backgroundColor = "rgb(215, 252, 255)";
@@ -287,7 +294,7 @@ function flashColor(): void {
   innerCircle.style.backgroundColor = "rgb(218, 185, 255)";
 }
 
-function clearColor(): void {
+function clearColor(): void { // diese Funktion stellt die originale Farbe der Buttons wieder her//
 
   topLeft.style.backgroundColor = "rgb(255, 0, 234";
   topRight.style.backgroundColor = "rgb(23, 240, 255)";
@@ -295,6 +302,7 @@ function clearColor(): void {
   bottomRight.style.backgroundColor = "rgb(255, 177, 10)";
   innerCircle.style.backgroundColor = "rgb(37, 1, 85)";
 }
+// [geht natürlich auch mit CSS Klassenwechsel aber Inline style ging schneller zu coden :) ]
 
 
 //FUNKTION FÜR DIE BUTTONS, WENN SIE VOM NUTZER GEKLICKT WERDEN//
@@ -302,12 +310,12 @@ function clearColor(): void {
 topLeft.addEventListener("click", function (): void { // Wenn der Spieler den Button drückt
   if (on) { //und das Spiel an ist
     playerOrder.push(1); // dann wird die Buttonnummer ins Array der Spielerreihenfolge gepushed
-    check(); //Funktion die, die Eingabe mit der Reihenfolge des Computers vergleicht
-    topleftbutton(); // Funktion für licht unf ton vom Button wird aufgerufen
-    if (!win) {
+    check(); //Funktion die, die Eingabe mit der Reihenfolge des Computers vergleicht wird aufgerufen
+    topleftbutton(); // Funktion für Licht und Ton vom Button wird aufgerufen
+    if (!win) { // Wenn das Spiel nicht gewonnen wurde, dann...
       setTimeout(() => {
-        clearColor();
-      },         300);
+        clearColor(); // ...werden die Farben der Buttons wieder zurück gesetzt
+      },         300); // nach 300ms
     }
   }
 }); // so auch für die anderen Buttons//
@@ -369,14 +377,19 @@ innerCircle.addEventListener("click", function (): void {
 
 
 function check(): void {
-  if (playerOrder[playerOrder.length - 1] !== compOrder[playerOrder.length - 1]) // hier vergleicht der Computer das Array mit der Reihenfolge des Computers mit dem Array mit der Spielereingabe
-    good = false; // wenn sie nicht übereinstimmen ist das boolean falsch
+  if (playerOrder[playerOrder.length - 1] !== compOrder[playerOrder.length - 1]) // hier vergleicht der Computer die letzte Eingabe ins NutzerArray mit der Zahl, die im ComputerArray steht.
+  /*Es wird die jeweils letzte Eingabe vom Nutzer verglichen. z.B. Ist die Länge des Nutzer Arrays nach der ersten Runde eins. Damit die erste Stelle aber verglichen wird, muss man beim Index noch -1 schreiben,
+  da der Index der ersten Stelle 0 ist.*/
+    good = false; // wenn sie NICHT übereinstimmen ist das boolean falsch, der SPieler hat also einen Fehler gemacht
 
-  if (playerOrder.length == 5 && good && easychosen ) { // wenn nach 5 runden vom Nutzer alles richtig gedrückt wurde und easy gewählt wurde, dann ist das Spiel gewonnen; genauso für die anderen Levels
+
+    //Festlegen, wann das Spiel gewonnen ist//
+
+  if (playerOrder.length == 5 && good && easychosen ) { // wenn nach 5 Runden (Also wenn die Länge vom NutzterArray 5 ist) vom Nutzer alles richtig gedrückt wurde und easy gewählt wurde, dann ist das Spiel gewonnen; genauso für die anderen Levels
     winGame(); //Spiel gewonnen für Level easy
   }
 
-  if (playerOrder.length == 15 && good && advancedchosen ) { 
+  if (playerOrder.length == 15 && good && advancedchosen ) { // Genauso wie Oben, nur dass das Spiel für den Schwierigkeitsgrad advanced nach 15 Runden gewonnen ist
     winGame(); //Spiel gewonnen für Level advanced
   }
 
@@ -388,31 +401,38 @@ function check(): void {
     winGame(); //Spiel gewonnen für Level extreme
   }
 
+    //Verlieren des Spiels//
 
   if (good == false) { // Wenn der Spieler einen Fehler macht, also das boolean falsch ist...
     looseGame(); //...Wird die ´Spiel verloren´ Funktion abgespielt
-    noise = false; // Dabei sollen beim Aufleuchten der Button aber deren Töne nicht abgespielt werden
+    noise = false; // Dabei sollen beim Aufleuchten der Button aber deren Töne nicht abgespielt werden, da es einen anderen Sound für diesen Fall gibt
   }
 
-  if (turn == playerOrder.length && good && !win) { 
-    turn++;
-    playerOrder = [];
-    compTurn = true;
-    flash = 0;
-    turnCounter.innerHTML = turn;
+
+    //Für den Rundenwechsel//
+
+  if (turn == playerOrder.length && good && !win) {  // Wenn die Runde der Länge des Arrays mit der Nutzterreihenfolge entspricht und bisher kein Fehler gemacht wurde und das Spiel noch nicht gewonnen wurde,...
+    turn++; // ...,dann geht das Spiel in die nächste Runde
+    playerOrder = []; // Das Array mit der Nutzterreihenfolge wird wieder gelehrt, damit es für die kommende Runde mit der neuen Nutztereingabe befüllt werden kann
+    compTurn = true; // Der Computer ist als erstes an der Reihe die willkürliche Reihenfolge zu spielen
+    flash = 0; // Es hat in der neuen Runde noch kein Button augeleuchtet, deshalb wird flash wieder auf 0 gesetzt
+    turnCounter.innerHTML = turn; // Im Counter wird angezeigt in welcher Runde der Spieler ist
     intervalId = setInterval(gameTurn, 800);
+
   
-    //Progressbar. So ist es umstädlich :( aber funktioniert. Besser mit Schleife?
-    if (turn == 2 && easychosen) {
-      progressbar.style.width = "20%";
+    //PROGRESS BAR VERSUCH nur für easy. So ist es aber umstädlich und zu lang :( //
+
+    //easy//
+    if (turn == 2 && easychosen) { //Wenn der Spieler in Runde zwei ist und easy als Schwierigkeit gewählt wurde,
+      progressbar.style.width = "20%"; //dann steht der Balken bei 20 Prozent usw...
     }
-    if (turn == 3 && easychosen) {
+    else if (turn == 3 && easychosen) {
       progressbar.style.width = "40%";
     }
-    if (turn == 4 && easychosen) {
+    else if (turn == 4 && easychosen) {
       progressbar.style.width = "60%";
     }
-    if (turn == 5 && easychosen) {
+    else if (turn == 5 && easychosen) {
       progressbar.style.width = "80%";
     }
     
@@ -424,12 +444,12 @@ function check(): void {
 // FUNKTION FÜR GEWINNEN DES SPIELS//
 
 function winGame(): void {
-  progressbar.style.width = "100%";
-  flashColor(); //Alle Buttons leuchten auf
-  let sound: HTMLAudioElement = new Audio(buttonsounds[5]); //WinnerSound wird abgespielt
+  progressbar.style.width = "100%"; // Der Fortschrittbalken steht auf 100%
+  flashColor(); //Alle Buttons leuchten gemeinsam auf
+  let sound: HTMLAudioElement = new Audio(buttonsounds[5]); //WinnerSound wird abgespielt; Sound ist im Array buttonsounds abgespeichert: (Zugriff mit Index 5)
   sound.play();
-  instructions.innerHTML = "CONGRATS, YOU WON!"; //Feierliche Nachricht wird angezeigt //Zeit und schwierigkeitsgrad hinzufügen
-  turnCounter.innerHTML = "WIN!"; // es wird eine Gewinner nachricht angezeigt
+  instructions.innerHTML = "CONGRATS, YOU WON!"; //Feierliche Nachricht wird angezeigt //
+  turnCounter.innerHTML = "WIN!"; // es wird eine Gewinner Nachricht im Counter angezeigt
   on = false; //Spiel schaltet sich aus, der Spieler kann also keine Knöpfe mehr drücken
   win = true; // Spiel gewonnen
 }
@@ -441,40 +461,19 @@ function looseGame(): void {
   let sound: HTMLAudioElement = new Audio(buttonsounds[6]); //verliererSound wird abgespielt
   sound.play();
   instructions.innerHTML = "SORRY, YOU LOST!"; //verlierer Nachricht
-  turnCounter.innerHTML = "FAIL!"; // eine verlierer Nachricht leuchtet auch im counter auf 
+  turnCounter.innerHTML = "FAIL!"; // eine verlierer Nachricht leuchtet auch im Counter auf 
   setTimeout(() => { 
-      clearColor();
+      clearColor(); //Die Farben werden nach 800ms wieder zu den ausgangsfarben geändert
     },       800);
-  on = false;
-  win = false;
+  on = false; //Spiel ist aus
+  win = false; //Spiel wurde nicht gewonnen
 
 }
 
 
 // RELOADBUTTON//
 
-reloadbutton.addEventListener("click", function(): void {
-  window.location.reload(); // nachgeschaut bei https://stackoverflow.com/questions/43985752/how-to-reload-page-the-whole-page-in-angular-2//
+reloadbutton.addEventListener("click", function(): void { // Bei click auf den Button wird die Seite neu geladen
+  window.location.reload(); // Methode nachgeschaut bei https://stackoverflow.com/questions/43985752/how-to-reload-page-the-whole-page-in-angular-2//
 }); 
-
-
-// PROGRESSBAR//
-
-/*class Progress {
-  private p: number;
-  private bar = document.querySelectorAll("#prog-bar > .progress-bar")[0];
-
-  constructor (p: number) {
-    this.p = p;
-    this.update();
-  }
-  private update() {
-    this.bar.style.width = this.p + "%";
-  }  
-  countup() {
-    if (this.p < 100) { this.p += 10; }
-    this.update();
-  }
-
-var p = new Progress(0); */
 
